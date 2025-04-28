@@ -9,7 +9,7 @@
     </nav>
 
 </div>
-<div id="cabecalho-meio">
+<div id="cabecalho-meio" class="cor1">
     <h1>HORTIFRUTI ONLINE - O melhor site de compras de frutas e legumes do Rio !</h1>
     <p>Nenhum item no seu carrinho de compras
     </p>
