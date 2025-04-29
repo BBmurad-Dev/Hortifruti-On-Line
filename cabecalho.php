@@ -11,28 +11,25 @@
 </div>
 <div id="cabecalho-meio" class="cor1">
     <h1>HORTIFRUTI ONLINE - O melhor site de compras de frutas e legumes do Rio !</h1>
-    <p>Nenhum item no seu carrinho de compras
+    <p class="sacola">Nenhum item no seu carrinho de compras
     </p>
-    <section>
+    <section class="busca">
         <form action="">
             <label>
                 <span> buscar </span>
                 <input type="search" name="pesquisa" id="pesquisa">
-                <input type="image" src="imagens/lupa24.png">
+                <input type="image" src="imagens/lupa.png">
             </label>
         </form>
     </section>
 </div>
-<div id="cabecalho-inferior">
+<div id="cabecalho-inferior" class="cor2">
     <nav id="menu-principal">
         <ul>
-            <li> <a href="#">Home</a> </li>
-            <li> <a href="#">Produtos</a> </li>
-            <li> <a href="#">Fale Conosco</a> </li>
+            <li class="linha-vertical"> <a href="#">Home</a> </li>
+            <li class="linha-vertical"> <a href="#">Produtos</a></li>
+            <li class="linha-vertical"> <a href="#">Fale Conosco</a> </li>
             <li> <a href="#">Quem Somos</a> </li>
         </ul>
-
     </nav>
-
-
 </div>
