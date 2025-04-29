@@ -115,14 +115,17 @@ nav#menu-principal ul li a:hover {
 }
 
 section#corpo {
-    background-color: red;
     width: 95%;
     height: auto;
     margin: 10px auto 0 auto;
-
 }
 
-
+div#lado-direito {
+    width: 79%;
+    height: auto;
+    margin-top: 11px;
+    float: left;
+}
 
 /* INICIO DAS CLASSES DO SITE */
 
@@ -148,7 +151,7 @@ section#corpo {
 
 .busca {
     text-align: right;
-    width: 27%;
+    width: 28%;
     position: absolute;
     top: 50%;
     left: 68%;
@@ -226,3 +229,38 @@ section.categorias ul ul li a {
 section.categorias ul ul li a:hover {
     color: #00ccff;
 }
+
+h3.titulo-vitrine {
+    width: 99,5%;
+    height: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: white;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.350);
+}
+
+section.vitrine {
+    margin: 10px 0;
+    padding: 5px;
+    width: 99%;
+    height: auto;
+    border: 1px solid #ccc;
+}
+
+section.vitrine h2 {
+    width: 99%;
+    height: 20px;
+    border: 1px solid #ccc;
+    margin: 2px 1px 5px 2px;
+    padding: 0px 0px 4px 4px;
+    background-color: #fbfbfb;    
+}
+
+section.vitrine ul { 
+    width: 99,5%;
+    height: auto;
+    border: 1px solid #ccc;
+    margin: 2px 1px 5px 2px;
+}
+
+

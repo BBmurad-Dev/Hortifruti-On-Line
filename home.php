@@ -30,4 +30,73 @@
             </ul>
         </nav>
     </section>
+
+    <div id="lado-direito">
+        <h3 class="titulo-vitrine cor1">Lista de Produtos</h3>
+        <section class="vitrine">
+            <h2>Categoria do Produto</h2>
+            <ul>
+                <li>
+                    <a href="#">
+                        <figure>
+                            <img src="imagens/produtos_p/abacate.jpg" alt="abacate">
+                            <figcaption>Abacate</figcaption>
+                        </figure>
+                        <span> R$ 37,90 </span>
+                        <form action="">
+                            <input type="submit" value="comprar">
+                        </form>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <figure>
+                            <img src="imagens/produtos_p/abacate.jpg" alt="abacate">
+                            <figcaption>Abacate</figcaption>
+                        </figure>
+                        <span> R$ 37,90 </span>
+                        <form action="">
+                            <input type="submit" value="comprar">
+                        </form>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <figure>
+                            <img src="imagens/produtos_p/abacate.jpg" alt="abacate">
+                            <figcaption>Abacate</figcaption>
+                        </figure>
+                        <span> R$ 37,90 </span>
+                        <form action="">
+                            <input type="submit" value="comprar">
+                        </form>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <figure>
+                            <img src="imagens/produtos_p/abacate.jpg" alt="abacate">
+                            <figcaption>Abacate</figcaption>
+                        </figure>
+                        <span> R$ 37,90 </span>
+                        <form action="">
+                            <input type="submit" value="comprar">
+                        </form>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <figure>
+                            <img src="imagens/produtos_p/abacate.jpg" alt="abacate">
+                            <figcaption>Abacate</figcaption>
+                        </figure>
+                        <span> R$ 37,90 </span>
+                        <form action="">
+                            <input type="submit" value="comprar">
+                        </form>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
 </div>
