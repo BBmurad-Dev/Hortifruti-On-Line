@@ -11,9 +11,9 @@
         <section id="cabecalho">
             <?php include_once ('cabecalho.php'); ?>
         </section> <!-- fim da section  cabeçalho-->
-        <section id ="principal">
-        
-        </section> <!-- fim da section principal -->
+        <section id ="corpo">
+            <?php include_once ('home.php'); ?>        
+        </section> <!-- fim da section corpo -->
         <footer>
         
         </footer> <!-- fim do rodapé -->
