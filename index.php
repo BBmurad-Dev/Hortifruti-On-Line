@@ -15,7 +15,7 @@
             <?php include_once ('home.php'); ?>        
         </section> <!-- fim da section corpo -->
         <footer>
-        
+            <?php include_once ('rodape.php'); ?>
         </footer> <!-- fim do rodapé -->
     </div> <!-- fim da div principal -->
 </body>

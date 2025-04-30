@@ -44,7 +44,7 @@
                         </figure>
                         <span> R$ 37,90 </span>
                         <form action="">
-                            <input type="submit" value="comprar">
+                            <input type="submit" value="">
                         </form>
                     </a>
                 </li>
@@ -56,7 +56,7 @@
                         </figure>
                         <span> R$ 37,90 </span>
                         <form action="">
-                            <input type="submit" value="comprar">
+                            <input type="submit" value="">
                         </form>
                     </a>
                 </li>
@@ -68,7 +68,7 @@
                         </figure>
                         <span> R$ 37,90 </span>
                         <form action="">
-                            <input type="submit" value="comprar">
+                            <input type="submit" value="">
                         </form>
                     </a>
                 </li>
@@ -80,7 +80,7 @@
                         </figure>
                         <span> R$ 37,90 </span>
                         <form action="">
-                            <input type="submit" value="comprar">
+                            <input type="submit" value="">
                         </form>
                     </a>
                 </li>
@@ -92,7 +92,7 @@
                         </figure>
                         <span> R$ 37,90 </span>
                         <form action="">
-                            <input type="submit" value="comprar">
+                            <input type="submit" value="">
                         </form>
                     </a>
                 </li>
