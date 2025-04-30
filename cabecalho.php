@@ -18,7 +18,9 @@
             <label>
                 <span> buscar </span>
                 <input type="search" name="pesquisa" id="pesquisa">
-                <input type="image" src="imagens/lupa.png">
+                <button type="submit" class="botao-lupa">
+                <img src="imagens/lupa.png" alt="Buscar">
+            </button>
             </label>
         </form>
     </section>
