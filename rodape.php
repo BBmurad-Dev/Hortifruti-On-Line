@@ -23,7 +23,21 @@
         <p class="textmails">bruno@four-system.com <br>
         contato@four-system.com</p>
 
-        <img src="imagens/logo_fs_sistema.png" alt="Logotipo Four-System Technology" class="logofs">
+        <img src="imagens/logo-hortifruti-p.png" alt="Logotipo Hortifruti On Line" class="logofs">
+
+        <p class="social">Siga-nos em nossas redes:</p>
+
+        <nav class="navsocial">
+            <ul>
+                <li><a href="https://instagram.com" target="_blank"><img src="imagens/redesSociais/instagran.png" alt="Logotipo Instagran"></a></li>
+                <li><a href="https://facebook.com" target="_blank"><img src="imagens/redesSociais/facebook.png" alt="Logotipo Facebook"></a></li>
+                <li><a href="https://youtube.com" target="_blank"><img src="imagens/redesSociais/youtube.png" alt="Logotipo Youtube"></a></li>
+                <li><a href="https://tiktok.com" target="_blank"><img src="imagens/redesSociais/tiktok.png" alt="Logotipo TikTok"></a></li>
+                <li><a href="https://kwai.com" target="_blank"><img src="imagens/redesSociais/kwai.png" alt="Logotipo Kwai"></a></li>
+            </ul>
+        </nav>
+
+
         
 
         
