@@ -11,10 +11,22 @@
             </ul>
         </nav>
     </div>
-    <div id="clear"></div>
-    <div id="rodape1" class="cor1">
-        <p> <img src="imagens/icone_local_p.png" alt="Icone Localização"> Rua Núncio Calepi, nº 253 - Realengo <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rio de Janeiro - RJ - CEP 21.745-010</p>
+    <div id="rodape-final" class="cor1">
+        
+        <img class="local" src="imagens/icone_local_p.png" alt="Icone de Localização">
+        
+        <p class="address">Rua Núncio Calepi, nº 253 - Realengo <br> 
+        Rio de Janeiro - RJ - CEP 21.745-010</p>
+
+        <img src="imagens/icon_email_p.png" alt="Icone Emails de Contato" class="rodmail">
+
+        <p class="textmails">bruno@four-system.com <br>
+        contato@four-system.com</p>
+
+        <img src="imagens/logo_fs_sistema.png" alt="Logotipo Four-System Technology" class="logofs">
+        
+
+        
     </div>
 
     <div id="copyright">

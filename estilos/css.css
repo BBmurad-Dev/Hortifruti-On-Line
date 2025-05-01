@@ -115,7 +115,6 @@ nav#menu-principal ul li a {
 
 nav#menu-principal ul li a:hover {
     color: red;
-
 }
 
 section#corpo {
@@ -135,29 +134,48 @@ div#clear {
     clear: both;
 }
 
-div#rodape {
-    font-size: 0;
-}
-
-div#rodape1 {
+div#rodape-final {
     width: 100%;
     height: 150px;
+    display: flex;
+    position: relative;
 }
 
-div#rodape1 > p {
-    width: 25%;
+div#rodape-final > img.local {
+    width: 28px;
+    height: 28px;
+    margin: 30px 0 0 20px;
+}
+
+div#rodape-final > p.address {
+    width: 20%;
+    height: 30px;
     font-size: 12px;
     color: #333;
-    font-weight: bold;
-    background-color: red;
-    padding-bottom: 10px;
+    margin: 30px 0 0 5px;
 }
 
-div#rodape1 > p > img {
-    position: relative;
-    top: 15px;
+div#rodape-final > img.rodmail {
+    position: absolute;
+    top: 85px;
+    left: 20px;
+    width: 28px;
+    height: 28px;
 }
 
+div#rodape-final > p.textmails {
+    position: absolute;
+    top: 85px;
+    left: 55px;
+}
+
+div#rodape-final > img.logofs {
+    position: absolute;
+    top: 6%;
+    left: 38%;
+    width: 300px;
+    height: 125px;
+}
 
 div#copyright > p {
     width: 100%;
