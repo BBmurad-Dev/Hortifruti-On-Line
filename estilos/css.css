@@ -217,9 +217,109 @@ div#copyright > p {
     font-weight: bold;
 }
 
+div#cx-img-prod {
+    width: 50%;
+    height: 385px;
+    border: 1px solid #ccc;
+    padding: 1px;
+    background-color: white;
+    margin-right: 10px;
+    float: left;
+}
+
+div#cx-img-prod > img {
+    border: 0;
+}
+
+div#titulo-prod {
+    width: 48%;
+    height: 100px;
+    float: left;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+div#titulo-prod h1 {
+    padding: 5px;
+}
+
+div#titulo-prod a {
+    color: #333;
+    font-size: 22px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+div#titulo-prod a:hover {
+    color: red;
+}
+
+div#preco-prod {
+    width: 48%;
+    height: 45px;
+    float: left;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: center;
+    background-color: #fff;    
+}
+
+div#preco-prod spain {
+    color: #ff0000;
+    font-size: 24px;
+}
+
+div#preco-prod strong {
+    color: #333;
+    font-size: 26px;
+    margin-left: 15px;
+}
+
+div#descricao { 
+    width: 48%;
+    height: 150px;
+    border: 1px solid #ccc;
+    float: left;
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+div#descricao h2 {
+    padding: 0 0 2px 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+div#descricao > p {
+    padding: 5px;
+    text-align: justify;
+    text-indent: 30px;
+}
+
+div#comprar-prod {
+    width: 99.5%;
+    height: 45px;
+    float: left;
+    margin-top: 7px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+    text-align: right;
+    padding-right: 5px;
+}
+
+div#comprar-prod > form > input {
+    width: 175px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    background: url(../imagens/comprar_detalhes.png);
+}
 
 
+/******************************/
 /* INICIO DAS CLASSES DO SITE */
+/******************************/
 
 .cor1 {
     background-color: var(--cor1);
@@ -343,10 +443,14 @@ h3.titulo-vitrine {
 
 section.vitrine {
     margin: 10px 0;
+}
+
+section.vitrine, section.vitrine-detalhe {
     padding: 5px;
     width: 99%;
     height: auto;
     border: 1px solid #ccc;
+    float: left;    
 }
 
 section.vitrine h2 {
@@ -405,6 +509,21 @@ section.vitrine input {
 
 section.vitrine input:hover {
     cursor: pointer;
+}
+
+div.set-grp { 
+    width: 23%;
+    height: 31px;
+    float: left;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-align: center;
+    padding-top: 15px;
+}
+
+div.cx2 {
+    margin-left: 16px;
 }
 
 

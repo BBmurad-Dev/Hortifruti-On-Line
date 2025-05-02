@@ -12,7 +12,7 @@
             <?php include_once ('cabecalho.php'); ?>
         </section> <!-- fim da section  cabeçalho-->
         <section id ="corpo">
-            <?php include_once ('home.php'); ?>        
+            <?php include_once ('detalhes.php'); ?>        
         </section> <!-- fim da section corpo -->
         <footer>
             <?php include_once ('rodape.php'); ?>
