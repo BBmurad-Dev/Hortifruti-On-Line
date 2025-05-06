@@ -10,9 +10,9 @@
     }
 
     public function __construct() {
-        $this->servidor ="localhost";
         $this->usuario  ="root";
         $this->senha    ="";
+        $this->servidor ="localhost";
         $this->banco    ="NomedoBancoAqui";
         self::conectar();
     }
@@ -22,12 +22,12 @@
         $this->banco    = @mysqli_select_db($this->banco) or die ("Não foi possível conectar ao Banco de Dados".mysqli_error());
     }
 
-    function executarSQL ($sql) {
-        $this->qry  = @mysqli_query($sql) or die ("Erro ao executar o comando MySQL: $sql <br>".mysqli_error());
+    function executarSQL($sql) {
+        $this->qry  = @mysqli_query($this->conexao, $sql) or die ("Erro ao executar o comando MySQL: $sql <br>".mysqli_error());
         return $this->qry;
     }
 
-    function listar ($qr) {
+    function listar($qr) {
         $this->dados    = @mysqli_fetch_assoc($qr);
         return $this->dados;
     }

@@ -10,37 +10,42 @@
         protected $campoTabela;
         protected $valorPesquisa;
 
-        public function setTabela ($tbl) {
+        public function setTabela($tbl) {
             $this->tabela   = $tbl;
         }
 
-        public function setCampos ($campo) {
+        public function setCampos($campo) {
             $this->campos   = $campo;
         }
 
-        public function setDados ($dado) {
+        public function setDados($dado) {
             $this->dados    = $dado;
         }
 
-        public function setCampoTabela ($campoTab) {
+        public function setCampoTabela($campoTab) {
             $this->campoTabela  = $campoTab;
         }
 
-        public function setValorPesquisa ($valorPesq) {
+        public function setValorPesquisa($valorPesq) {
             $this->valorPesquisa = $valorPesq;
         }
 
-        public function getMsg () {
+        public function getMsg() {
             return $this->msg;
         }
 
-        public function inserir () {
-            $this->sql  = "INSERT INTO $this->tabela ($this->campos) VALUES ($this->setDados)";
+        public function inserir() {
+            $this->sql  = "INSERT INTO $this->tabela ($this->campos) VALUES ($this->dados)";
             self::executarSQL($this->sql);
         }
 
-        public function excluir () {
+        public function excluir() {
             $this->sql  = "DELETE FROM $this->tabela WHERE $this->campoTabela = '$this->valorPesquisa'";
+            self::executarSQL($this->sql);
+        }
+
+        public function alterar() {
+            $this->sql  = "UPDATE $this->tabela SET $this->campos WHERE $this->campoTabela = '$this->valorPesquisa'";
             self::executarSQL($this->sql);
         }
     }
