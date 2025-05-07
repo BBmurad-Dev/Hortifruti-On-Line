@@ -10,6 +10,9 @@
     padding: 0;
 }
 
+/********* INDEX PRINCIPAL************/
+/*************************************/
+
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 12px;
@@ -31,6 +34,16 @@ section#cabecalho {
     background-color: var(--cor2);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+section#corpo {
+    width: 1200px;
+    height: auto;
+    margin: 140px auto 0 auto;
+}
+
+/** FIM DO INDEX PRINCIPAL **/
+
+/********** INICIO CABECALHO *********/
 
 div#cabecalho-superior {
     width: 100%;
@@ -81,6 +94,40 @@ div#cabecalho-meio h1 {
     background-image: url("../imagens/logo-hortifruti-p.png");
 }
 
+.sacola {
+    width: 25%;
+    height: 25px;
+    font-size: 10px;
+    text-align: right;
+    position: absolute;
+    top: 20%;
+    left: 71%;
+    background: url("../imagens/carrinho.png") no-repeat top right;
+    padding-right: 25px;
+}
+
+.busca {
+    text-align: right;
+    width: 40%;
+    position: absolute;
+    top: 55%;
+    left:58%;
+}
+
+section.busca input[type=search] {
+    width: 300px;
+}
+
+.botao-lupa {
+    position: relative;
+    top: 3px; /* desce o botão (e a imagem dentro) 3px */
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
 div#cabecalho-inferior {
     width: 100%;  
     line-height: 22px;
@@ -117,11 +164,14 @@ nav#menu-principal ul li a:hover {
     color: red;
 }
 
-section#corpo {
-    width: 1200px;
-    height: auto;
-    margin: 140px auto 0 auto;
+.linha-vertical {
+    border-right: 1px solid #ccc;
 }
+
+/************  FIM DO CABECALHO ************/
+
+
+
 
 div#lado-direito {
     width: 79%;
@@ -327,44 +377,6 @@ div#comprar-prod > form > input {
 
 .cor2 {
     background-color: var(--cor2);
-}
-
-.sacola {
-    width: 25%;
-    height: 25px;
-    font-size: 10px;
-    text-align: right;
-    position: absolute;
-    top: 20%;
-    left: 71%;
-    background: url("../imagens/carrinho.png") no-repeat top right;
-    padding-right: 25px;
-}
-
-.busca {
-    text-align: right;
-    width: 40%;
-    position: absolute;
-    top: 55%;
-    left:58%;
-}
-
-section.busca input[type=search] {
-    width: 300px;
-}
-
-.botao-lupa {
-    position: relative;
-    top: 3px; /* desce o botão (e a imagem dentro) 3px */
-    background: none;
-    border: none;
-    padding: 0;
-    margin-left: 5px;
-    cursor: pointer;
-}
-
-.linha-vertical {
-    border-right: 1px solid #ccc;
 }
 
 aside.banner {
