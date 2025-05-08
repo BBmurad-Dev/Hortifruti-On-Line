@@ -13,11 +13,12 @@
             </div> <!-- fim da section  cabeçalho-->
             <div id="corpo-adm">
                 <nav id="lado-esquerdo">
-
+                    <?php include_once ('menu.php'); ?>
                 </nav>
                 <div id="lado-direito">
 
                 </div>
             </div>
+        </div>
     </body>
 </html>
