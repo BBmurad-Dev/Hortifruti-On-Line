@@ -16,7 +16,31 @@
                     <?php include_once ('menu.php'); ?>
                 </nav>
                 <div id="lado-direito">
+                    <?php
+                        $link = $_GET["link"];
 
+                        $pag[1] = "home.php";
+                        $pag[2] = "admin.php";
+                        $pag[3] = "clientes.php";
+                        $pag[4] = "vendas.php";
+                        $pag[5] = "promocao.php";
+                        $pag[6] = "setores.php";
+                        $pag[7] = "grupos.php";
+                        $pag[8] = "medidas.php";
+                        $pag[9] = "banners.php";
+
+                        if (!empty($link)) {
+                            if (file_exists($pag[$link])) {
+                                include $pag[$link];
+                            }
+                            else {
+                                include "home.php";
+                            }
+                        }    
+                            else {
+                                include "home.php";
+                            }                                                    
+                    ?>
                 </div>
             </div>
         </div>

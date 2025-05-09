@@ -99,5 +99,44 @@ nav#menu-principal {
     text-align: center;
 }
 
+/********** CORPO ADMIN **********/
+
+div#corpo-adm { 
+    width: 1200px;
+}
+
+nav#lado-esquerdo {
+    width: 200px;
+    float: left;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #CCC;
+}
+
+nav#lado-esquedo li, #esquerdo li a {
+    font: 12px verdana;
+    text-decoration: none;
+    color: #555;
+}
+
+nav#lado-esquerdo ul li {
+    padding-left: 10px;
+    list-style: none;
+}
+
+nav#lado-esquerdo li a {
+    width: 175px;
+    padding: 4px 0 3px 5px;
+    display: block;
+    border-bottom: dotted 1px #999;
+    background: #F5F5F5;
+}
+
+nav#lado-esquerdo li a:hover {
+    color: #069;
+    background-color: #E6F5FB;
+}
+  
+
 
 
