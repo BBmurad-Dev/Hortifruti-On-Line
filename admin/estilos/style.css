@@ -136,6 +136,128 @@ nav#lado-esquerdo li a:hover {
     color: #069;
     background-color: #E6F5FB;
 }
+
+div#lado-direito {
+    width: 992px;
+    float: left;
+    margin: 5px 0 0 5px;
+    border: 1px solid #ccc;
+}
+
+div#lado-direito h2 {
+    text-align: center;
+}
+
+/********** LISTAS **********/
+
+table {
+    float: left;
+    border-collapse: collapse;
+    border: 1px solid #333;
+    background: #fff;
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+}
+
+table thead {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: var(--cor1);
+}
+
+table thead tr th {
+    padding: 3px 0;
+}
+
+table tbody {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: #000;
+}
+table tbody tr td {
+    padding: 3px;
+}
+
+table tbody tr td:hover {
+    background: #f4f4f4;
+}
+
+/********** FORMULARIOS **********/
+
+div#formulario {
+    width: 985px;
+    padding: 3px;
+    background: #fff;
+    border: 1px solid #069;
+}
+
+div#formulario label { 
+    display: block;
+}
+
+div#formulario label span.titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #069;
+    display: block;
+    width: 100%;
+    margin: 6px 4px 2px 30px;
+}
+
+div#formulario form label input[type=text], div#formulario form label input[type=password] {
+    padding: 6px 5px;
+    margin-left: 30px;
+    background: #fff;
+    border: 1px solid #069;
+    width: 900px;
+    outline: none;
+}
+
+div#formulario .dois-campos {
+    padding: 4px 0;
+    width: 955px;
+}
+
+div#formulario .dois-campos > label {
+    display: inline-table;
+    width: 300px;
+    margin-right: 5px;
+}
+
+div#formulario .dois-campos > label input[type=text] {
+    width: 425px;
+}
+
+div#formulario .dois-campos > label > select {
+    padding: 4px 0;
+    width: 435px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    margin-left: 30px;
+    border: 1px solid #069;
+}
+
+div#formulario .tres-campos label {
+    display: inline-table;
+    width: 250px;
+}
+
+div#formulario .tres-campos label input[type=text] {
+    width: 270px;
+}
+
+div#formulario .botao {
+    width: 120px;
+    height: 30px;
+    display: block;
+    margin: 15px auto;
+    cursor: pointer;
+    color: #fff;
+    background: #069;
   
 
 

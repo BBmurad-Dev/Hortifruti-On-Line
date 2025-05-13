@@ -20,8 +20,8 @@
                         $link = $_GET["link"];
 
                         $pag[1] = "home.php";
-                        $pag[2] = "admin.php";
-                        $pag[3] = "clientes.php";
+                        $pag[2] = "lst/lst.php";
+                        $pag[3] = "frm/frm.php";
                         $pag[4] = "vendas.php";
                         $pag[5] = "promocao.php";
                         $pag[6] = "setores.php";
