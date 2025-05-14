@@ -7,6 +7,7 @@
         protected $conexao;
         protected $qry;
         protected $dados;
+        protected $totalDados;
     }
 
     public function __construct() {
@@ -14,12 +15,18 @@
         $this->senha    ="";
         $this->servidor ="localhost";
         $this->banco    ="NomedoBancoAqui";
-        self::conectar();
+        $this->conectar();
     }
 
     function conectar() {
-        $this->conexao  = @mysqli_connect($this->servidor, $this->usuario, $this->senha) or die ("Não foi possível conectar com o SERVIDOR do banco de dados".mysqli_error());
-        $this->banco    = @mysqli_select_db($this->banco) or die ("Não foi possível conectar ao Banco de Dados".mysqli_error());
+        $this->conexao  = mysqli_connect($this->servidor, $this->usuario, $this->senha);
+        if (!$this->conexao) {
+            throw new Exception("Não foi possível conectar ao servidor do Banco de Dados:" . mysqli_connect_errno());
+        }
+        $this->banco    = mysqli_select_db($this->conexao, $this->banco);
+        if (!$this->banco) {
+            throw new Exception("Não foi possível selecionar o Banco de Dados" . mysqli_error($this->banco));
+        }
     }
 
     function executarSQL($sql) {
@@ -32,6 +39,8 @@
         return $this->dados;
     }
 
-
-
+    function contaDados($qry) {
+        $this->totalDados = mysqli_num_rows($qry);
+        return $this->totalDados;
+    }
 ?>
