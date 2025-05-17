@@ -14,7 +14,7 @@
         $this->usuario  ="root";
         $this->senha    ="";
         $this->servidor ="localhost";
-        $this->banco    ="NomedoBancoAqui";
+        $this->banco    ="bdhortifruti";
         $this->conectar();
     }
 
