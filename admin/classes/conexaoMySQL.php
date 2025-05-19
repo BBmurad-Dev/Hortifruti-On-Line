@@ -8,8 +8,7 @@
         protected $qry;
         protected $dados;
         protected $totalDados;
-    }
-
+    
     public function __construct() {
         $this->usuario  ="root";
         $this->senha    ="";
@@ -19,7 +18,7 @@
     }
 
     function conectar() {
-        $this->conexao  = mysqli_connect($this->servidor, $this->usuario, $this->senha);
+        $this->conexao  = @mysqli_connect($this->servidor, $this->usuario, $this->senha);
         if (!$this->conexao) {
             throw new Exception("Não foi possível conectar ao servidor do Banco de Dados:" . mysqli_connect_errno());
         }
@@ -30,7 +29,7 @@
     }
 
     function executarSQL($sql) {
-        $this->qry  = @mysqli_query($this->conexao, $sql) or die ("Erro ao executar o comando MySQL: $sql <br>".mysqli_error());
+        $this->qry  = @mysqli_query($this->conexao, $sql);
         return $this->qry;
     }
 
@@ -42,5 +41,6 @@
     function contaDados($qry) {
         $this->totalDados = mysqli_num_rows($qry);
         return $this->totalDados;
+    }
     }
 ?>

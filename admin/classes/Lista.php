@@ -1,7 +1,7 @@
 <?php
     include_once ("paginacao.php");
 
-    class listar extends Paginacao {
+    class Lista extends Paginacao {
         private $strNumPagina, $strPaginas, $strUrl;
         
         public function setNumPagina($valor) {
@@ -13,7 +13,7 @@
         }
 
         public function getPaginas() {
-            return $this-> strNumPagina;
+            return $this-> strPaginas;
         }
 
         public function listaCategoria() {
@@ -22,7 +22,7 @@
             $this-> setFileName($this->strUrl);
             $this-> setInfoMaxPag(10);
             $this-> setMaximoLinks(50);
-            $this-> setSQL($sql);
+            $this-> setSQL($sql);   
 
             self::iniciaPaginacao();
             

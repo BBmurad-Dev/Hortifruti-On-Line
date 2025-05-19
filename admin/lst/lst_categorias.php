@@ -1,9 +1,12 @@
 <?php 
-    include_once('./classes/listar.php');
+    include_once('./classes/Lista.php');
 
     $lista = new Lista();
     $lista-> setNumPagina($_GET["pag"]);
     $lista-> setUrl("index.php?link=2");
+
+    ini_set('error_reporting', E_ALL);
+    ini_set('display_errors', 1);
 
 ?>
 <h2>Lista de Categorias</h2>
