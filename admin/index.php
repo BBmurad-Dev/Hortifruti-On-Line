@@ -21,7 +21,7 @@
 
                         $pag[1] = "home.php";
                         $pag[2] = "lst/lst_categorias.php";
-                        $pag[3] = "frm/frm.php";
+                        $pag[3] = "frm/frm_categorias.php";
                         $pag[4] = "vendas.php";
                         $pag[5] = "promocao.php";
                         $pag[6] = "setores.php";

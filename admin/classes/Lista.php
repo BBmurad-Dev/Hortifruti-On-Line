@@ -31,13 +31,13 @@
                 $cont++;
                 echo "
                 <tr>
-                    <td> $linha[id_categ] </td>
-                    <td> $linha[nome_categ] </td>
-                    <td> $linha[slug_categ] </td>
+                    <td> $linha[id_categ]    </td>
+                    <td> $linha[nome_categ]  </td>
+                    <td> $linha[slug_categ]  </td>
                     <td> $linha[ordem_categ] </td>
                     <td> $linha[ativo_categ] </td>
-                    <td><a href='../index.php?link=3&id=$linha[id_categ]'><img src='imagens/' alt='' border='0'></a></td>
-                    <td><a href='../index.php?link=3&id=$linha[id_categ]'><img src='imagens/' alt='' border='0'></a></td>
+                    <td><a href='./index.php?link=3&acao=Alterar&id=$linha[id_categ]'><img src='./imagens/alterar.gif' alt='Alterar' border='0'></a></td>
+                    <td><a href='./index.php?link=3&acao=Excluir&id=$linha[id_categ]'><img src='./imagens/excluir.gif' alt='Excluir' border='0'></a></td>
                 </tr>
                 ";
                 self::setContador($cont);
