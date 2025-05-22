@@ -37,6 +37,52 @@
         }
     }
 
+    class DadosBanner extends conexaoMySQL {
+        private $id_banner, $nome_banner, $alt_banner, $url_banner, $imagem_banner, $ativo_banner;
+        
+        public function setIdBanner($id_banner) {
+            $this-> id_banner = $id_banner;
+        }
+        public function getIdBanner() {
+            return $this-> id_banner;
+        }
+        public function getNomeBanner() {
+            return $this-> nome_banner;
+        }
+        public function getAltBanner() {
+            return $this-> alt_banner;
+        }
+        public function getUrlBanner() {
+            return $this-> url_banner;
+        }
+        public function getImagemBanner() {
+            return $this-> imagem_banner;
+        }
+        public function getAtivoBanner() {
+            return $this-> ativo_banner;
+        }
 
+        public function mostrarDadosBanner() {
+            $sql   = "SELECT * FROM banner WHERE id_banner='$this->id_banner'";
+            $qry   = self::executarSQL($sql);
+            $linha = self::listar($qry);
 
+            $this->id_banner     = $linha["id_banner"];
+            $this->nome_banner   = $linha["nome_banner"];
+            $this->alt_banner    = $linha["alt_banner"];
+            $this->url_banner    = $linha["url_banner"];
+            $this->imagem_banner = $linha["imagem_banner"];
+            $this->ativo_banner  = $linha["ativo_banner"];
+        }
+
+        public function pegarProximoId() {
+        $sql = "SELECT AUTO_INCREMENT 
+                FROM information_schema.TABLES 
+                WHERE TABLE_SCHEMA = DATABASE() 
+                AND TABLE_NAME = 'banner'";
+        $qry = self::executarSQL($sql);
+        $linha = self::listar($qry);
+        return $linha["AUTO_INCREMENT"]; // Retorna o próximo ID que será usado
+    }
+}
 ?>

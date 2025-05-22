@@ -28,6 +28,14 @@
                         $pag[7] = "grupos.php";
                         $pag[8] = "medidas.php";
                         $pag[9] = "banners.php";
+                        $pag[10] = "banners.php";
+                        $pag[11] = "banners.php";
+                        $pag[12] = "banners.php";
+                        $pag[13] = "banners.php";
+                        $pag[14] = "banners.php";
+                        $pag[15] = "frm/frm_banner.php";
+                        $pag[16] = "lst/lst_banner.php";
+                        
 
                         if (!empty($link)) {
                             if (file_exists($pag[$link])) {

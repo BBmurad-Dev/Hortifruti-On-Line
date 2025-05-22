@@ -104,8 +104,8 @@
                 }
             }            
             //mostra os numeros das paginas
-            while (($lnk_impressos < $this->numeroPaginas) and ($lnk_impressos < $this->maxLink)) {
-                $lnk_impressos ++;
+            while ((@$lnk_impressos < $this->numeroPaginas) and (@$lnk_impressos < $this->maxLink)) {
+                @$lnk_impressos ++;
                     //Mostra a pagina atual sem o link
                     if ($this->pagAtual == $lnk_impressos){ 
                         echo "$lnk_impressos \n ";  

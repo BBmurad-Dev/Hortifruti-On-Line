@@ -1,6 +1,6 @@
 <?php
-    $acao   = $_GET["acao"];
-    $id     = $_GET["id"];
+    @$acao   = $_GET["acao"];
+    @$id     = $_GET["id"];
 
     if ($acao!=""){ 
         include_once("./classes/dadosdoBanco.php");
@@ -47,7 +47,7 @@
                 <span class="titulo">Ativo</span>
                 <select name="txt_ativo_categ" id="txt_ativo_categ">
                     <option value="SIM" <?php if ($acao!="" && $ativoCateg=="SIM") echo "selected"; ?>>SIM</option>
-                    <option value="NAO" <?php if ($acao!="" && $ativoCateg=="NÃO") echo "selected"; ?>>NÃO</option>
+                    <option value="NÃO" <?php if ($acao!="" && $ativoCateg=="NÃO") echo "selected"; ?>>NÃO</option>
                 </select>
             </label>
         </div>

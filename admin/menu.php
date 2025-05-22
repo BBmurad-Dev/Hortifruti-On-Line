@@ -40,6 +40,6 @@
 </ul>
 <div id="sessao" class="fundo_azul"> Banners </div>
 <ul>
-    <li><a href="#">Cadastrar</a></li>
-    <li><a href="#">Listar / Editar</a></li>
+    <li><a href="index.php?link=15">Cadastrar</a></li>
+    <li><a href="index.php?link=16">Listar / Editar</a></li>
 </ul>

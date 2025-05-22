@@ -48,6 +48,15 @@
             $this->sql  = "UPDATE $this->tabela SET $this->campos WHERE $this->campoTabela = '$this->valorPesquisa'";
             self::executarSQL($this->sql);
         }
+
+        public function ultimoRegistro($campo, $tabela)
+        {
+            $sql = "SELECT $campo FROM $tabela ORDER BY $campo DESC LIMIT 1";
+            $qry = self::executarSQL($sql);
+            $linha = self::listar($qry);
+
+            return $linha["$campo"];
+        }
     }
 
 

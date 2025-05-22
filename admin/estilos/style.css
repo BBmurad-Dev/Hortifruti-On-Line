@@ -208,6 +208,16 @@ div#formulario label span.titulo {
     margin: 6px 4px 2px 30px;
 }
 
+span.tituloIMG {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #069;
+    display: inline
+    width: 100%;
+    margin: 6px 4px 2px 30px;
+}
+
 div#formulario form label input[type=text], div#formulario form label input[type=password] {
     padding: 6px 5px;
     margin-left: 30px;
@@ -230,6 +240,16 @@ div#formulario .dois-campos > label {
 
 div#formulario .dois-campos > label input[type=text] {
     width: 425px;
+}
+
+div#formulario .dois-campos > label input[type=file] {
+    padding: 4px 5px;
+    margin-left: 30px;
+    background: #fff;
+    border: 1px solid #069;
+    width: 425px;
+    outline: none;
+
 }
 
 div#formulario .dois-campos > label > select {

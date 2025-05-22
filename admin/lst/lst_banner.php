@@ -3,18 +3,19 @@
 
     $lista = new Lista();
     @$lista-> setNumPagina($_GET["pg"]);
-    $lista-> setUrl("index.php?link=2");
+    $lista-> setUrl("index.php?link=16");
 ?>
 
-<h2>Lista de Categorias</h2>
+<h2>Lista de Banners Cadastrados</h2>
 
 <table cellpadding="0" cellspacing="0" border="1">
     <thead>
         <tr>
-            <th>ID Categ</th>
-            <th>Categoria</th>
-            <th>Slug Categ</th>
-            <th>Exibição</th>
+            <th>ID</th>
+            <th>Nome Banner</th>
+            <th>Alt (HTML)</th>
+            <th>Url (WWW)</th>
+            <th>Imagem</th>
             <th>Ativo</th>
             <th>Editar</th>
             <th>Excluir</th>
@@ -22,10 +23,10 @@
     </thead>
     <tbody>
         <?php
-            $lista->listaCategoria();        
-        ?>        
+            $lista->listaBanner();
+        ?>
         <tr>
-            <td colspan="7"> <?php $lista->geraNumeros(); ?> </td>
+            <td colspan="8"> <?php $lista->geraNumeros(); ?> </td>
         </tr>
     </tbody>
 </table>
