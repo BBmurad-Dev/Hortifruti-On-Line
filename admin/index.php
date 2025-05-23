@@ -20,19 +20,19 @@
                         $link = $_GET["link"];
 
                         $pag[1] = "home.php";
-                        $pag[2] = "lst/lst_categorias.php";
-                        $pag[3] = "frm/frm_categorias.php";
-                        $pag[4] = "vendas.php";
-                        $pag[5] = "promocao.php";
-                        $pag[6] = "setores.php";
-                        $pag[7] = "grupos.php";
-                        $pag[8] = "medidas.php";
-                        $pag[9] = "banners.php";
-                        $pag[10] = "banners.php";
-                        $pag[11] = "banners.php";
-                        $pag[12] = "banners.php";
-                        $pag[13] = "banners.php";
-                        $pag[14] = "banners.php";
+                        $pag[2] = "home.php";
+                        $pag[3] = "home.php";
+                        $pag[4] = "home.php";
+                        $pag[5] = "home.php";
+                        $pag[6] = "frm/frm_produtos.php";
+                        $pag[7] = "lst/lst_produtos.php";
+                        $pag[8] = "home.php";
+                        $pag[9] = "home.php";
+                        $pag[10] = "home.php";
+                        $pag[11] = "frm/frm_categorias.php";
+                        $pag[12] = "lst/lst_categorias.php";
+                        $pag[13] = "home.php";
+                        $pag[14] = "home.php";
                         $pag[15] = "frm/frm_banner.php";
                         $pag[16] = "lst/lst_banner.php";
                         

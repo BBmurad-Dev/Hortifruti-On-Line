@@ -83,6 +83,79 @@
         $qry = self::executarSQL($sql);
         $linha = self::listar($qry);
         return $linha["AUTO_INCREMENT"]; // Retorna o próximo ID que será usado
+        }
     }
-}
+
+    class DadosProduto extends conexaoMySQL {
+        private $id_prod, $id_categprod, $id_setorprod, $nome_prod, $slug_prod, $descricao_prod, $id_medidaprod, $preco_prod, $promocao_prod, $imagemp_prod, $imagemg_prod, $ativo_prod;
+        
+        public function setIdProduto($id_prod) {
+            $this-> id_prod = $id_prod;
+        }
+        public function getIdProduto() {
+            return $this-> id_prod;
+        }
+        public function getIdCategProd() {
+            return $this-> id_categprod;
+        }
+        public function getIdSetorProd() {
+            return $this-> id_setorprod;
+        }
+        public function getNomeProd() {
+            return $this-> nome_prod;
+        }
+        public function getSlugProd() {
+            return $this-> slug_prod;
+        }
+        public function getDescricao_prod() {
+            return $this-> descricao_prod;
+        }
+        public function getIdMedidaProd() {
+            return $this-> id_medidaprod;
+        }
+        public function getPrecoProd() {
+            return $this-> preco_prod;
+        }
+        public function getPromocaoProd() {
+            return $this-> promocao_prod;
+        }
+        public function getImagemPProd() {
+            return $this-> imagemp_prod;
+        }
+        public function getImagemGProd() {
+            return $this-> imagemg_prod;
+        }
+        public function getAtivoProd() {
+            return $this-> ativo_prod;
+        }
+
+        public function mostrarDadosProduto() {
+            $sql   = "SELECT * FROM produto WHERE id_prod='$this->id_prod'";
+            $qry   = self::executarSQL($sql);
+            $linha = self::listar($qry);
+
+            $this->id_prod         = $linha["id_prod"];
+            $this->id_categprod    = $linha["id_categprod"];
+            $this->id_setorprod    = $linha["id_setorprod"];
+            $this->nome_prod       = $linha["nome_prod"];
+            $this->slug_prod       = $linha["slug_prod"];
+            $this->descricao_prod  = $linha["descricao_prod"];
+            $this->id_medidaprod   = $linha["id_medidaprod"];
+            $this->preco_prod      = $linha["preco_prod"];
+            $this->promocao_prod   = $linha["promocao_prod"];
+            $this->imagemp_prod    = $linha["imagemp_prod"];
+            $this->imagemg_prod    = $linha["imagemg_prod"];
+            $this->ativo_prod      = $linha["ativo_prod"];            
+        }
+
+        public function pegarProximoId() {
+        $sql = "SELECT AUTO_INCREMENT 
+                FROM information_schema.TABLES 
+                WHERE TABLE_SCHEMA = DATABASE() 
+                AND TABLE_NAME = 'produto'";
+        $qry = self::executarSQL($sql);
+        $linha = self::listar($qry);
+        return $linha["AUTO_INCREMENT"]; // Retorna o próximo ID que será usado
+        }
+    }
 ?>
