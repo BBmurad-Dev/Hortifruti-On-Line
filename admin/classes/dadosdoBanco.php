@@ -1,6 +1,55 @@
 <?php
     include_once("conexaoMySQL.php");
 
+    class DadosSetor extends conexaoMySQL {
+        private $id_setor, $nome_setor, $slug_setor, $ordem_setor, $ativo_setor;
+        
+        public function setIdSetor($id_setor) {
+            $this-> id_setor = $id_setor;
+        }
+        public function getIdSetor() {
+            return $this-> id_setor;
+        }
+        public function getNomeSetor() {
+            return $this-> nome_setor;
+        }
+        public function getSlugSetor() {
+            return $this-> slug_setor;
+        }
+        public function getOrdemSetor() {
+            return $this-> ordem_setor;
+        }
+        public function getAtivoSetor() {
+            return $this-> ativo_setor;
+        }
+
+        public function mostrarDadosSetor() {
+            $sql   = "SELECT * FROM setor WHERE id_setor='$this->id_setor'";
+            $qry   = self::executarSQL($sql);
+            $linha = self::listar($qry);
+
+            $this->id_setor    = $linha["id_setor"];
+            $this->nome_setor  = $linha["nome_setor"];
+            $this->slug_setor  = $linha["slug_setor"];
+            $this->ordem_setor = $linha["ordem_setor"];
+            $this->ativo_setor = $linha["ativo_setor"];
+        }
+
+        public function comboBoxSetor($id) {
+            $sql   = "SELECT * FROM setor";
+            $qry   = self::executarSQL($sql);
+
+            while ($linha = self::listar($qry)) {                
+                if ($id==$linha["id_setor"]) {
+                    $selecionado = "selected = 'selected'";
+                } else {
+                    $selecionado = "";
+                }
+                echo "<option value =$linha[id_setor] $selecionado>$linha[nome_setor]</option>\n";
+            }
+        }
+    }
+
     class DadosCategoria extends conexaoMySQL {
         private $id_categ, $nome_categ, $slug_categ, $ordem_categ, $ativo_categ;
         
@@ -38,7 +87,6 @@
         public function comboBoxCateg($id) {
             $sql   = "SELECT * FROM categoria";
             $qry   = self::executarSQL($sql);
-            $linha = self::listar($qry);
 
             while ($linha = self::listar($qry)) {
                 if ($id==$linha["id_categ"]) {
@@ -47,6 +95,55 @@
                     $selecionado = "";
                 }
                 echo "<option value =$linha[id_categ] $selecionado>$linha[nome_categ]</option>\n";
+            }
+        }
+    }
+
+    class DadosMedida extends conexaoMySQL {
+        private $id_medida, $nome_medida, $slug_medida, $ordem_medida, $ativo_medida;
+        
+        public function setIdMedida($id_medida) {
+            $this-> id_medida = $id_medida;
+        }
+        public function getIdMedida() {
+            return $this-> id_medida;
+        }
+        public function getNomeMedida() {
+            return $this-> nome_medida;
+        }
+        public function getSlugMedida() {
+            return $this-> slug_medida;
+        }
+        public function getOrdemMedida() {
+            return $this-> ordem_medida;
+        }
+        public function getAtivoMedida() {
+            return $this-> ativo_medida;
+        }
+
+        public function mostrarDadosMedida() {
+            $sql   = "SELECT * FROM medida WHERE id_medida='$this->id_medida'";
+            $qry   = self::executarSQL($sql);
+            $linha = self::listar($qry);
+
+            $this->id_medida    = $linha["id_medida"];
+            $this->nome_medida  = $linha["nome_medida"];
+            $this->slug_medida  = $linha["slug_medida"];
+            $this->ordem_medida = $linha["ordem_medida"];
+            $this->ativo_medida = $linha["ativo_medida"];
+        }
+
+        public function comboBoxMedida($id) {
+            $sql   = "SELECT * FROM medida";
+            $qry   = self::executarSQL($sql);
+
+            while ($linha = self::listar($qry)) {
+                if ($id==$linha["id_medida"]) {
+                    $selecionado = "selected = 'selected'";
+                } else {
+                    $selecionado = "";
+                }
+                echo "<option value =$linha[id_medida] $selecionado>$linha[nome_medida]</option>\n";
             }
         }
     }

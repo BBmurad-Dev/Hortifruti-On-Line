@@ -16,7 +16,7 @@
     $categoria->setCampos("nome_categ, slug_categ, ordem_categ, ativo_categ");
     $categoria->setDados("'$nome_categ', '$slug_categ','$ordem_categ', '$ativo_categ'");
     $categoria->inserir();
-    echo "<script type='text/javascript'>location.href='../index.php?link=11'</script>";
+    echo "<script type='text/javascript'>location.href='../index.php?link=12'</script>";
     }
 
     if ($acao=="Alterar") {
@@ -27,13 +27,13 @@
                                  ordem_categ = '$ordem_categ',
                                  ativo_categ = '$ativo_categ'");        
         $categoria->alterar();
-        echo "<script type='text/javascript'>location.href='../index.php?link=11'</script>";
+        echo "<script type='text/javascript'>location.href='../index.php?link=12'</script>";
     }
 
     if ($acao=="Excluir") {
         $categoria->setCampoTabela("id_categ");
         $categoria->setValorPesquisa("$id");
         $categoria->excluir();
-        echo "<script type='text/javascript'>location.href='../index.php?link=11'</script>";
+        echo "<script type='text/javascript'>location.href='../index.php?link=12'</script>";
     }
 ?>

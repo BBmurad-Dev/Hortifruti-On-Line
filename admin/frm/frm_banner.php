@@ -1,10 +1,10 @@
 <?php
+    include_once("./classes/dadosdoBanco.php");
     @$acao   = $_GET["acao"];
     @$id     = $_GET["id"];
 
     if ($acao!=""){ 
-        include_once("./classes/dadosdoBanco.php");
-
+        
         $dados = new DadosBanner();
         $dados->setIdBanner($id);
         $dados->mostrarDadosBanner();

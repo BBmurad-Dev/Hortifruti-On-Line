@@ -25,8 +25,8 @@
 </ul>
 <div id="sessao" class="fundo_azul"> Setores </div>
 <ul>
-    <li><a href="#">Cadastrar</a></li>
-    <li><a href="#">Listar / Editar</a></li>
+    <li><a href="index.php?link=9">Cadastrar</a></li>
+    <li><a href="index.php?link=10">Listar / Editar</a></li>
 </ul>
 <div id="sessao" class="fundo_azul"> Categorias </div>
 <ul>
@@ -35,8 +35,8 @@
 </ul>
 <div id="sessao" class="fundo_azul"> Medidas </div>
 <ul>
-    <li><a href="#">Cadastrar</a></li>
-    <li><a href="#">Listar / Editar</a></li>
+    <li><a href="index.php?link=13">Cadastrar</a></li>
+    <li><a href="index.php?link=14">Listar / Editar</a></li>
 </ul>
 <div id="sessao" class="fundo_azul"> Banners </div>
 <ul>

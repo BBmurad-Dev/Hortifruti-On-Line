@@ -50,8 +50,8 @@
                 <span class="titulo">Selecione o Setor</span>
                 <select name="txt_id_setorprod" id="txt_id_setorprod">
                     <?php 
-                        $comboBox = new DadosCategoria ();
-                        $comboBox->comboBoxCateg($idCategProd);
+                        $comboBox = new DadosSetor ();
+                        $comboBox->comboBoxSetor($idSetorProd);
                     ?>
                 </select>
             </label>
@@ -69,8 +69,8 @@
                 <span class="titulo">Selecione a Medida</span>
                 <select name="txt_id_medidaprod" id="txt_id_medidaprod">
                     <?php 
-                        $comboBox = new DadosCategoria ();
-                        $comboBox->comboBoxCateg($idCategProd);
+                        $comboBox = new DadosMedida ();
+                        $comboBox->comboBoxMedida($idMedidaProd);
                     ?>
                 </select>
             </label>        

@@ -27,12 +27,12 @@
                         $pag[6] = "frm/frm_produtos.php";
                         $pag[7] = "lst/lst_produtos.php";
                         $pag[8] = "home.php";
-                        $pag[9] = "home.php";
-                        $pag[10] = "home.php";
+                        $pag[9] = "frm/frm_setor.php";
+                        $pag[10] = "lst/lst_setor.php";
                         $pag[11] = "frm/frm_categorias.php";
                         $pag[12] = "lst/lst_categorias.php";
-                        $pag[13] = "home.php";
-                        $pag[14] = "home.php";
+                        $pag[13] = "frm/frm_medida.php";
+                        $pag[14] = "lst/lst_medida.php";
                         $pag[15] = "frm/frm_banner.php";
                         $pag[16] = "lst/lst_banner.php";
                         
