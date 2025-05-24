@@ -227,6 +227,15 @@ div#formulario form label input[type=text], div#formulario form label input[type
     outline: none;
 }
 
+div#formulario form label textarea {
+    padding: 6px 5px;
+    margin-left: 30px;
+    background: #fff;
+    border: 1px solid #069;
+    width: 900px;
+    outline: none;
+}
+
 div#formulario .dois-campos {
     padding: 4px 0;
     width: 955px;
@@ -249,12 +258,20 @@ div#formulario .dois-campos > label input[type=file] {
     border: 1px solid #069;
     width: 425px;
     outline: none;
-
 }
 
 div#formulario .dois-campos > label > select {
     padding: 4px 0;
     width: 435px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    margin-left: 30px;
+    border: 1px solid #069;
+}
+
+div#formulario .tres-campos > label > select {
+    padding: 4px 0;
+    width: 281px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
     margin-left: 30px;

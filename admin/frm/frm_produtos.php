@@ -1,9 +1,9 @@
 <?php
+    include_once("./classes/dadosdoBanco.php");
     @$acao   = $_GET["acao"];
     @$id     = $_GET["id"];
 
-    if ($acao!=""){ 
-        include_once("./classes/dadosdoBanco.php");
+    if ($acao!=""){       
 
         $dados = new DadosProduto();
         $dados->setIdProduto($id);
@@ -35,37 +35,89 @@
         ?> de Produtos
     </h2>
     <form action="./op/op_produtos.php" method="post" enctype="multipart/form-data">
-        <label for="">
-            <span class="titulo">Nome do Banner</span>
-            <input type="text" name="txt_nome_banner" id="txt_nome_banner" value="<?php if ($acao!="") { echo $nomeBanner; } ?>">
-        </label>
         <div class="dois-campos">
             <label for="">
-                <span class="titulo">Alt do Banner</span>
-                <input type="text" name="txt_alt_banner" id="txt_alt_banner" value="<?php if ($acao!="") { echo $altBanner; } ?>">
+                <span class="titulo">Nome do Produto</span>
+                <input type="text" name="txt_nome_prod" id="txt_nome_prod" value="<?php if ($acao!="") { echo $nomeProd; } ?>">
             </label>
             <label for="">
-                <span class="titulo">Url do Banner</span>
-                <input type="text" name="txt_url_banner" id="txt_url_banner" value="<?php if ($acao!="") { echo $urlBanner; } ?>">
+                <span class="titulo">Slug do Produto</span>
+                <input type="text" name="txt_slug_prod" id="txt_slug_prod" value="<?php if ($acao!="") { echo $slugProd; } ?>">
             </label>
+        </div>
+        <div class="tres-campos">
+            <label for="">
+                <span class="titulo">Selecione o Setor</span>
+                <select name="txt_id_setorprod" id="txt_id_setorprod">
+                    <?php 
+                        $comboBox = new DadosCategoria ();
+                        $comboBox->comboBoxCateg($idCategProd);
+                    ?>
+                </select>
+            </label>
+            <label for="">
+                <span class="titulo">Selecione a Categoria</span>
+                <select name="txt_id_categprod" id="txt_id_categprod">
+                    <?php 
+                        $comboBox = new DadosCategoria ();
+                        $comboBox->comboBoxCateg($idCategProd);
+                    ?>
+                </select>
+
+            </label>
+            <label for="">
+                <span class="titulo">Selecione a Medida</span>
+                <select name="txt_id_medidaprod" id="txt_id_medidaprod">
+                    <?php 
+                        $comboBox = new DadosCategoria ();
+                        $comboBox->comboBoxCateg($idCategProd);
+                    ?>
+                </select>
+            </label>        
         </div>
         <div class="dois-campos">
             <label class="imagem">
                 <span class="titulo"><?php if ($acao!="") { 
-                    echo "Imagem atual: ".$imagemBanner; 
-                    } else echo "Selecione uma imagem"; ?>
+                    echo "Imagem Pequena atual: ".$imagemPProd; 
+                    } else echo "Selecione a Imagem Pequena (Vitrine)"; ?>
                 </span>
                 <input type="file" name="img">
             </label>
+            <label class="imagem">
+                <span class="titulo"><?php if ($acao!="") { 
+                    echo "Imagem Grande atual: ".$imagemGProd; 
+                    } else echo "Selecione a Imagem Grande (Descrição)"; ?>
+                </span>
+                <input type="file" name="img">
+            </label>
+        </div>
+        <div class="tres-campos">
             <label for="">
-                <span class="titulo">Ativo</span>
-                <select name="txt_ativo_banner" id="txt_ativo_banner">
-                    <option value="SIM" <?php if ($acao!="" && $ativoBanner=="SIM") echo "selected"; ?>>SIM</option>
-                    <option value="NÃO" <?php if ($acao!="" && $ativoBanner=="NÃO") echo "selected"; ?>>NÃO</option>
+                <span class="titulo">Preço do Produto</span>
+                <input type="text" name="txt_preco_prod" id="txt_preco_prod" value="<?php if ($acao!="") { echo $precoProd; } ?>">
+            </label>
+            <label for="">
+                <span class="titulo">Protudo encontra-se em Promoção</span>
+                <select name="txt_promocaoprod" id="txt_promocaoprod">
+                    <option value="NÃO" <?php if ($acao!="" && $promocaoProd=="NÃO") echo "selected"; ?>>NÃO</option>
+                    <option value="SIM" <?php if ($acao!="" && $promocaoProd=="SIM") echo "selected"; ?>>SIM</option>                    
+                </select>
+            </label>
+            <label for="">
+                <span class="titulo">Produto Ativo</span>
+                <select name="txt_ativo_prod" id="txt_ativo_prod">
+                    <option value="SIM" <?php if ($acao!="" && $ativoProd=="SIM") echo "selected"; ?>>SIM</option>
+                    <option value="NÃO" <?php if ($acao!="" && $ativoProd=="NÃO") echo "selected"; ?>>NÃO</option>
                 </select>
             </label>
         </div>
-        <input type="hidden" name="imagemBanner" value="<?php echo $imagemBanner; ?>">
+        <label for="">
+            <span class="titulo">Descrição do Produto</span>
+            <textarea name="txt_descricao_prod" id="txt_descricao_prod" value="<?php if ($acao!="") { echo $descricaoProd; } ?>" rows=5></textarea>
+        </label>
+        
+        <input type="hidden" name="imagemPProd" value="<?php echo $imagemPProd; ?>">
+        <input type="hidden" name="imagemGProd" value="<?php echo $imagemGProd; ?>">
         <input type="hidden" name="id" value="<?php echo $id; ?>">
         <input type="hidden" name="acao" value="<?php if ($acao!="") {echo $acao;} else {echo "Inserir";}?>">
         <input type="submit" value="<?php if ($acao!="") {echo $acao;} else {echo "Inserir";}?>" class="botao">

@@ -33,7 +33,21 @@
             $this->slug_categ  = $linha["slug_categ"];
             $this->ordem_categ = $linha["ordem_categ"];
             $this->ativo_categ = $linha["ativo_categ"];
+        }
 
+        public function comboBoxCateg($id) {
+            $sql   = "SELECT * FROM categoria";
+            $qry   = self::executarSQL($sql);
+            $linha = self::listar($qry);
+
+            while ($linha = self::listar($qry)) {
+                if ($id==$linha["id_categ"]) {
+                    $selecionado = "selected = 'selected'";
+                } else {
+                    $selecionado = "";
+                }
+                echo "<option value =$linha[id_categ] $selecionado>$linha[nome_categ]</option>\n";
+            }
         }
     }
 

@@ -90,18 +90,12 @@
                 echo "
                 <tr>
                     <td> $linha[id_prod] </td>
-                    <td> $linha[id_categprod] </td>
-                    <td> $linha[id_setorprod] </td>
                     <td> $linha[nome_prod] </td>
-                    <td> $linha[slug_prod] </td>
-                    <td> $linha[descricao_prod] </td>
-                    <td> $linha[id_medidaprod] </td>
+                    <td> $linha[id_setorprod] </td>
+                    <td> $linha[id_categprod] </td>
                     <td> $linha[preco_prod] </td>
                     <td> $linha[promocao_prod] </td>
-                    <td> $linha[imagemp_prod] </td>
-                    <td> $linha[imagemg_prod] </td>
                     <td> $linha[ativo_prod] </td>
-
                     
                     <td><a href='./index.php?link=6&acao=Alterar&id=$linha[id_prod]'><img src='./imagens/alterar.gif' alt='Alterar' border='0'></a></td>
                     <td><a href='./index.php?link=6&acao=Excluir&id=$linha[id_prod]'><img src='./imagens/excluir.gif' alt='Excluir' border='0'></a></td>

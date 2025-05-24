@@ -12,10 +12,11 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Nome Banner</th>
-            <th>Alt (HTML)</th>
-            <th>Url (WWW)</th>
-            <th>Imagem</th>
+            <th>Produto</th>
+            <th>Setor</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Promoção</th>
             <th>Ativo</th>
             <th>Editar</th>
             <th>Excluir</th>
