@@ -1,3 +1,8 @@
+<?php
+    include_once("admin/classes/dadosdoBanco.php");    
+    $setor = new DadosSetor();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,7 +17,25 @@
             <?php include_once ('cabecalho.php'); ?>
         </section> <!-- fim da section  cabeçalho-->
         <section id ="corpo">
-            <?php include_once ('detalhes.php'); ?>        
+            <?php
+                        @$link = $_GET["link"];
+
+                        $pag[1] = "home.php";
+                        $pag[2] = "home.php";
+                       
+
+                        if (!empty($link)) {
+                            if (file_exists($pag[$link])) {
+                                include $pag[$link];
+                            }
+                            else {
+                                include "home.php";
+                            }
+                        }    
+                            else {
+                                include "home.php";
+                            }                                                    
+                    ?>   
         </section> <!-- fim da section corpo -->
         <footer>
             <?php include_once ('rodape.php'); ?>

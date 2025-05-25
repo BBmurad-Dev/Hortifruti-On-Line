@@ -6,70 +6,112 @@
     $acao = $_POST["acao"];
     $id   = $_POST["id"];
 
-    $banner = new manipulaDados ();
-    $banner->setTabela("banner");
+    $produto = new manipulaDados ();
+    $produto->setTabela("produto");
 
-    $nome_banner    = $_POST["txt_nome_banner"];
-    $alt_banner     = $_POST["txt_alt_banner"];  
-    $url_banner     = $_POST["txt_url_banner"];
-    $ativo_banner   = $_POST["txt_ativo_banner"];
-    $imagem         = $_FILES["img"];
-    $txt_nomeimagem = $_POST["imagemBanner"];
+    $idCategProd     = $_POST["txt_id_categprod"];
+    $idSetorProd     = $_POST["txt_id_setorprod"];  
+    $nomeProd        = $_POST["txt_nome_prod"];
+    $slugProd        = $_POST["txt_slug_prod"];
+    $descricaoProd   = $_POST["txt_descricao_prod"];
+    $idMedidaProd    = $_POST["txt_id_medidaprod"];
+    $precoProd       = $_POST["txt_preco_prod"];
+    $promocaoProd    = $_POST["txt_promocao_prod"];
+    $imagemPProd     = $_FILES["imgP"];
+    $imagemGProd     = $_FILES["imgG"];
+    $txt_nomeimagemP = $_POST["imagemPProd"];
+    $txt_nomeimagemG = $_POST["imagemGProd"];
+    $ativoProd       = $_POST["txt_ativo_prod"];
 
-    /********** VERIFICA CONFIGURA E FAZ O UPLOAD DA IMAGEM **********/
+    /********** VERIFICA CONFIGURA E FAZ O UPLOAD DA IMAGEM P **********/
 
-    if ($imagem["name"]!="") {
-        $pasta      = "../banners";
+    if ($imagemPProd["name"]!="") {
+        $pasta      = "../imagens/produtos/";
         $permitido  = array("image/jpg", "image/jpeg", "image/pjpeg");
-        $tmp        = $imagem['tmp_name'];
-        $name       = $imagem["name"];
-        $type       = $imagem["type"];
+        $tmp        = $imagemPProd['tmp_name'];
+        $name       = $imagemPProd["name"];
+        $type       = $imagemPProd["type"];
 
-        $ultReg = new DadosBanner();
+        $ultReg = new DadosProduto();
 
         // Opção 1: Pegar o próximo ID disponível (RECOMENDADO)
         $proximoId = $ultReg->pegarProximoId();
 
         if (!empty($name) && in_array($type, $permitido)) {
-            $txt_nomeimagem = "bn-" . $proximoId . ".jpg";
-            upload_jpg($tmp, $txt_nomeimagem, 1200, $pasta);            
+            $txt_nomeimagemP = "Prodp-" . $proximoId . ".jpg";
+            upload_jpg($tmp, $txt_nomeimagemP, 90, $pasta);            
         }
         else if (!empty($name) && $type=="image/png") { 
-            $txt_nomeimagem = "bn-" . $proximoId . ".png";
-            upload_png($tmp, $txt_nomeimagem, 1200, $pasta);
+            $txt_nomeimagemP = "Prodp-" . $proximoId . ".png";
+            upload_png($tmp, $txt_nomeimagemP, 90, $pasta);
         }
         else if (!empty($name) && $type=="image/gif") { 
-            $txt_nomeimagem = "bn-" . $proximoId . ".gif";
-            upload_gif($tmp, $txt_nomeimagem, 1200, $pasta);
+            $txt_nomeimagemP = "Prodp-" . $proximoId . ".gif";
+            upload_gif($tmp, $txt_nomeimagemP, 90, $pasta);
+        }
+    }
+
+    /********** VERIFICA CONFIGURA E FAZ O UPLOAD DA IMAGEM g **********/
+
+    if ($imagemGProd["name"]!="") {
+        $pasta      = "../imagens/produtos/";
+        $permitido  = array("image/jpg", "image/jpeg", "image/pjpeg");
+        $tmp        = $imagemGProd['tmp_name'];
+        $name       = $imagemGProd["name"];
+        $type       = $imagemGProd["type"];
+
+        $ultReg = new DadosProduto();
+
+        // Opção 1: Pegar o próximo ID disponível (RECOMENDADO)
+        $proximoId = $ultReg->pegarProximoId();
+
+        if (!empty($name) && in_array($type, $permitido)) {
+            $txt_nomeimagemG = "Prodg-" . $proximoId . ".jpg";
+            upload_jpg($tmp, $txt_nomeimagemG, 90, $pasta);            
+        }
+        else if (!empty($name) && $type=="image/png") { 
+            $txt_nomeimagemG = "Prodg-" . $proximoId . ".png";
+            upload_png($tmp, $txt_nomeimagemG, 90, $pasta);
+        }
+        else if (!empty($name) && $type=="image/gif") { 
+            $txt_nomeimagemG = "Prodg-" . $proximoId . ".gif";
+            upload_gif($tmp, $txt_nomeimagemG, 90, $pasta);
         }
     }
 
     /*****************************************************************/
 
     if ($acao=="Inserir") {
-    $banner->setCampos("nome_banner, alt_banner, url_banner, imagem_banner, ativo_banner");
-    $banner->setDados("'$nome_banner', '$alt_banner','$url_banner', '$txt_nomeimagem', '$ativo_banner'");
-    $banner->inserir();
-    echo "<script type='text/javascript'>location.href='../index.php?link=16'</script>";
+    $produto->setCampos("id_categprod, id_setorprod, nome_prod, slug_prod, descricao_prod, id_medidaprod, preco_prod, promocao_prod, imagemp_prod, imagemg_prod, ativo_prod");
+    $produto->setDados("'$idCategProd', '$idSetorProd','$nomeProd', '$slugProd', '$descricaoProd', '$idMedidaProd', '$precoProd', '$promocaoProd','$txt_nomeimagemP', '$txt_nomeimagemG', '$ativoProd'");
+    $produto->inserir();
+    echo "<script type='text/javascript'>location.href='../index.php?link=7'</script>";
     }
 
     if ($acao=="Alterar") {
-        $banner->setCampoTabela("id_banner");
-        $banner->setValorPesquisa("$id");
-        $banner->setCampos  ("  nome_banner   = '$nome_banner', 
-                                alt_banner    = '$alt_banner',
-                                url_banner    = '$url_banner',
-                                imagem_banner = '$txt_nomeimagem',
-                                ativo_banner  = '$ativo_banner'");        
-        $banner->alterar();
-        echo "<script type='text/javascript'>location.href='../index.php?link=16'</script>";
+        $produto->setCampoTabela("id_prod");
+        $produto->setValorPesquisa("$id");
+        $produto->setCampos  (" id_categprod   = '$idCategProd', 
+                                id_setorprod   = '$idSetorProd',
+                                nome_prod      = '$nomeProd',
+                                slug_prod      = '$slugProd',
+                                descricao_prod = '$descricaoProd',
+                                id_medidaprod  = '$idMedidaProd',
+                                preco_prod     = '$precoProd',
+                                promocao_prod  = '$promocaoProd',
+                                imagemp_prod   = '$txt_nomeimagemP',
+                                imagemg_prod   = '$txt_nomeimagemG',
+                                ativo_prod     = '$ativoProd'");        
+        $produto->alterar();
+        echo "<script type='text/javascript'>location.href='../index.php?link=7'</script>";
     }
 
     if ($acao=="Excluir") {
-        $banner->setCampoTabela("id_banner");
-        $banner->setValorPesquisa("$id");
-        $banner->excluir();
-        unlink("../banners/".$txt_nomeimagem);
-        echo "<script type='text/javascript'>location.href='../index.php?link=16'</script>";
+        $produto->setCampoTabela("id_prod");
+        $produto->setValorPesquisa("$id");
+        $produto->excluir();
+        unlink("../produtos/".$txt_nomeimagemP);
+        unlink("../produtos/".$txt_nomeimagemG);
+        echo "<script type='text/javascript'>location.href='../index.php?link=7'</script>";
     }
 ?>

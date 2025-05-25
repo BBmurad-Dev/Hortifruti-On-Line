@@ -13,7 +13,7 @@
         $idSetorProd   = $dados->getIdSetorProd();
         $nomeProd      = $dados->getNomeProd();
         $slugProd      = $dados->getSlugProd();
-        $descricaoProd = $dados->getDescricao_prod();
+        $descricaoProd = $dados->getDescricaoProd();
         $idMedidaProd  = $dados->getIdMedidaProd();
         $precoProd     = $dados->getPrecoProd();
         $promocaoProd  = $dados->getPromocaoProd();
@@ -79,16 +79,16 @@
             <label class="imagem">
                 <span class="titulo"><?php if ($acao!="") { 
                     echo "Imagem Pequena atual: ".$imagemPProd; 
-                    } else echo "Selecione a Imagem Pequena (Vitrine)"; ?>
+                    } else echo "Selecione a Imagem Pequena (90x140)"; ?>
                 </span>
-                <input type="file" name="img">
+                <input type="file" name="imgP">
             </label>
             <label class="imagem">
                 <span class="titulo"><?php if ($acao!="") { 
                     echo "Imagem Grande atual: ".$imagemGProd; 
-                    } else echo "Selecione a Imagem Grande (Descrição)"; ?>
+                    } else echo "Selecione a Imagem Grande (300x300)"; ?>
                 </span>
-                <input type="file" name="img">
+                <input type="file" name="imgG">
             </label>
         </div>
         <div class="tres-campos">
@@ -98,7 +98,7 @@
             </label>
             <label for="">
                 <span class="titulo">Protudo encontra-se em Promoção</span>
-                <select name="txt_promocaoprod" id="txt_promocaoprod">
+                <select name="txt_promocao_prod" id="txt_promocao_prod">
                     <option value="NÃO" <?php if ($acao!="" && $promocaoProd=="NÃO") echo "selected"; ?>>NÃO</option>
                     <option value="SIM" <?php if ($acao!="" && $promocaoProd=="SIM") echo "selected"; ?>>SIM</option>                    
                 </select>
@@ -113,7 +113,7 @@
         </div>
         <label for="">
             <span class="titulo">Descrição do Produto</span>
-            <textarea name="txt_descricao_prod" id="txt_descricao_prod" value="<?php if ($acao!="") { echo $descricaoProd; } ?>" rows=5></textarea>
+            <textarea name="txt_descricao_prod" id="txt_descricao_prod" rows=5><?php if ($acao!="") { echo htmlspecialchars($descricaoProd); } ?></textarea>
         </label>
         
         <input type="hidden" name="imagemPProd" value="<?php echo $imagemPProd; ?>">

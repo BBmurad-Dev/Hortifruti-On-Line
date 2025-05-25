@@ -36,17 +36,30 @@
         }
 
         public function comboBoxSetor($id) {
-            $sql   = "SELECT * FROM setor";
-            $qry   = self::executarSQL($sql);
+            $sql = "SELECT * FROM setor";
+            $qry = self::executarSQL($sql);
 
             while ($linha = self::listar($qry)) {                
-                if ($id==$linha["id_setor"]) {
-                    $selecionado = "selected = 'selected'";
-                } else {
-                    $selecionado = "";
-                }
-                echo "<option value =$linha[id_setor] $selecionado>$linha[nome_setor]</option>\n";
+                $selecionado = ($id == $linha['id_setor']) ? "selected='selected'" : "";
+                echo "<option value='{$linha['id_setor']}' $selecionado>{$linha['nome_setor']}</option>\n";
             }
+        }
+
+        public function totalRegistrosSetor ($sql){
+            $qry   = self::executarSQL($sql);
+            $total = self::contaDados($qry);
+            return $total; 
+        }
+
+        public function verSetores ($sql, $i) {
+            $qry = mysqli_query($sql); 
+
+            $this->id_setor     =  mysqli_result($qry, $i, "id_setor");
+            $this->nome_setor   =  mysqli_result($qry, $i, "nome_setor");
+            $this->slug_setor   =  mysqli_result($qry, $i, "slug_setor");
+            $this->ordem_setor  =  mysqli_result($qry, $i, "ordem_setor");
+            $this->ativo_setor  =  mysqli_result($qry, $i, "ativo_setor");
+
         }
     }
 
@@ -218,7 +231,7 @@
         public function getSlugProd() {
             return $this-> slug_prod;
         }
-        public function getDescricao_prod() {
+        public function getDescricaoProd() {
             return $this-> descricao_prod;
         }
         public function getIdMedidaProd() {

@@ -127,7 +127,6 @@
                 ";
                 self::setContador($cont);
             }
-
         }
 
         public function listaProduto() {
@@ -143,12 +142,21 @@
             $cont = 0;
             while ($linha = self::results()) {
                 $cont++;
+                
+                $sqlSetor   = "SELECT * FROM setor WHERE id_setor = '$linha[id_setorprod]'";
+                $result = self::executarSQL($sqlSetor);
+                $setor  = mysqli_fetch_assoc($result);
+
+                $sqlCategoria  = "SELECT * FROM categoria  WHERE id_categ = '$linha[id_categprod]'";
+                $result = self::executarSQL($sqlCategoria);
+                $categoria  = mysqli_fetch_assoc($result);
+
                 echo "
                 <tr>
                     <td> $linha[id_prod] </td>
                     <td> $linha[nome_prod] </td>
-                    <td> $linha[id_setorprod] </td>
-                    <td> $linha[id_categprod] </td>
+                    <td> $setor[nome_setor] </td>
+                    <td> $categoria[nome_categ] </td>
                     <td> $linha[preco_prod] </td>
                     <td> $linha[promocao_prod] </td>
                     <td> $linha[ativo_prod] </td>
@@ -160,9 +168,6 @@
                 ";
                 self::setContador($cont);
             }
-
         }
-
-   
     }
 ?>

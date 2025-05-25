@@ -1,4 +1,4 @@
-<div id="corpo-loja">
+    <div id="corpo-loja">
     <aside class="banner">
         <img src="imagens/banner01.png" alt="Imagem Hortifruti">
     </aside>
@@ -8,25 +8,21 @@
 
         <nav>
             <ul class="cor1">
-                <li><a href="#"> .: Categoria 01</a></li>
-                    <ul>
-                        <li><a href="#">.: Produto 1</a></li>
-                        <li><a href="#">.: Produto 2</a></li>
-                        <li><a href="#">.: Produto 3</a></li>
-                        <li><a href="#">.: Produto 4</a></li>
-                    </ul>
-                <li><a href="#"> .: Categoria 02</a></li>
-                    <ul>
-                        <li><a href="#">.: Produto 3</a></li>
-                        <li><a href="#">.: Produto 4</a></li>
-                    </ul>
-                <li><a href="#"> .: Categoria 03</a></li>
-                    <ul>
-                        <li><a href="#">.: Produto 5</a></li>
-                        <li><a href="#">.: Produto 6</a></li>
-                        <li><a href="#">.: Produto 7</a></li>
-                        <li><a href="#">.: Produto 8</a></li>
-                    </ul>
+                <?php 
+                    $sql   = "SELECT * FROM setor";
+                    $total = $categoria->totalRegistrosSetor($sql);
+                    for ($i=0; $i<$total; i++) {  
+                        $categoria->verSetores($sql)                
+                ?>
+                    <li><a href="#"> .: Categoria 01</a></li>
+                        <ul>
+                            <li><a href="#">.: Produto 1</a></li>
+                            <li><a href="#">.: Produto 2</a></li>
+                            <li><a href="#">.: Produto 3</a></li>
+                            <li><a href="#">.: Produto 4</a></li>
+                        </ul>
+                <?php } ?>
+                
             </ul>
         </nav>
     </section>
