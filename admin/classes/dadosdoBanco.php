@@ -45,21 +45,32 @@
             }
         }
 
-        public function totalRegistrosSetor ($sql){
+        public function totalRegistrosSetor($sql){
             $qry   = self::executarSQL($sql);
             $total = self::contaDados($qry);
             return $total; 
         }
 
-        public function verSetores ($sql, $i) {
-            $qry = mysqli_query($sql); 
-
-            $this->id_setor     =  mysqli_result($qry, $i, "id_setor");
-            $this->nome_setor   =  mysqli_result($qry, $i, "nome_setor");
-            $this->slug_setor   =  mysqli_result($qry, $i, "slug_setor");
-            $this->ordem_setor  =  mysqli_result($qry, $i, "ordem_setor");
-            $this->ativo_setor  =  mysqli_result($qry, $i, "ativo_setor");
-
+        public function verSetores($sql, $i) {
+            $qry = self::executarSQL($sql);
+           
+            // Mover o ponteiro para a linha desejada
+            if (!mysqli_data_seek($qry, $i)) {
+                return false; // Linha não encontrada
+            }
+            
+            // Obter a linha como array associativo
+            $row = mysqli_fetch_assoc($qry);
+            
+            if ($row) {
+                $this->id_setor    = $row['id_setor'];
+                $this->nome_setor  = $row['nome_setor'];
+                $this->slug_setor  = $row['slug_setor'];
+                $this->ordem_setor = $row['ordem_setor'];
+                $this->ativo_setor = $row['ativo_setor'];
+                return true;
+            }            
+                return false;
         }
     }
 
@@ -110,6 +121,34 @@
                 echo "<option value =$linha[id_categ] $selecionado>$linha[nome_categ]</option>\n";
             }
         }
+
+        public function totalRegistrosCateg($sql){
+            $qry   = self::executarSQL($sql);
+            $total = self::contaDados($qry);
+            return $total; 
+        }
+
+        public function verCategorias($sql, $i) {
+            $qry = self::executarSQL($sql);
+           
+            // Mover o ponteiro para a linha desejada
+            if (!mysqli_data_seek($qry, $i)) {
+                return false; // Linha não encontrada
+            }
+            
+            // Obter a linha como array associativo
+            $row = mysqli_fetch_assoc($qry);
+            
+            if ($row) {
+                $this->id_categ    = $row["id_categ"];
+                $this->nome_categ  = $row["nome_categ"];
+                $this->slug_categ  = $row["slug_categ"];
+                $this->ordem_categ = $row["ordem_categ"];
+                $this->ativo_categ = $row["ativo_categ"];
+                return true;
+            }            
+                return false;
+        }
     }
 
     class DadosMedida extends conexaoMySQL {
@@ -158,6 +197,34 @@
                 }
                 echo "<option value =$linha[id_medida] $selecionado>$linha[nome_medida]</option>\n";
             }
+        }
+
+        public function totalRegistrosMedida($sql){
+            $qry   = self::executarSQL($sql);
+            $total = self::contaDados($qry);
+            return $total; 
+        }
+
+        public function verMedidas($sql, $i) {
+            $qry = self::executarSQL($sql);
+           
+            // Mover o ponteiro para a linha desejada
+            if (!mysqli_data_seek($qry, $i)) {
+                return false; // Linha não encontrada
+            }
+            
+            // Obter a linha como array associativo
+            $row = mysqli_fetch_assoc($qry);
+            
+            if ($row) {
+                $this->id_medida    = $row["id_medida"];
+                $this->nome_medida  = $row["nome_medida"];
+                $this->slug_medida  = $row["slug_medida"];
+                $this->ordem_medida = $row["ordem_medida"];
+                $this->ativo_medida = $row["ativo_medida"];
+                return true;
+            }            
+                return false;
         }
     }
 
@@ -281,5 +348,41 @@
         $linha = self::listar($qry);
         return $linha["AUTO_INCREMENT"]; // Retorna o próximo ID que será usado
         }
+
+        public function totalRegistrosProd($sql){
+            $qry   = self::executarSQL($sql);
+            $total = self::contaDados($qry);
+            return $total; 
+        }
+
+        public function verProdutos($sql, $i) {
+            $qry = self::executarSQL($sql);
+           
+            // Mover o ponteiro para a linha desejada
+            if (!mysqli_data_seek($qry, $i)) {
+                return false; // Linha não encontrada
+            }
+            
+            // Obter a linha como array associativo
+            $row = mysqli_fetch_assoc($qry);
+            
+            if ($row) {
+                $this->id_prod         = $row["id_prod"];
+                $this->id_categprod    = $row["id_categprod"];
+                $this->id_setorprod    = $row["id_setorprod"];
+                $this->nome_prod       = $row["nome_prod"];
+                $this->slug_prod       = $row["slug_prod"];
+                $this->descricao_prod  = $row["descricao_prod"];
+                $this->id_medidaprod   = $row["id_medidaprod"];
+                $this->preco_prod      = $row["preco_prod"];
+                $this->promocao_prod   = $row["promocao_prod"];
+                $this->imagemp_prod    = $row["imagemp_prod"];
+                $this->imagemg_prod    = $row["imagemg_prod"];
+                $this->ativo_prod      = $row["ativo_prod"];
+                return true;
+            }            
+                return false;
+        }
+        
     }
 ?>

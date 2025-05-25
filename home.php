@@ -9,13 +9,17 @@
         <nav>
             <ul class="cor1">
                 <?php 
-                    $sql   = "SELECT * FROM setor";
-                    $total = $categoria->totalRegistrosSetor($sql);
-                    for ($i=0; $i<$total; i++) {  
-                        $categoria->verSetores($sql)                
+                    $sqlSetor   = "SELECT * FROM setor";
+                    $total = $setor->totalRegistrosSetor($sqlSetor);
+                    for ($i=0; $i<$total; $i++) {  
+                        $setor->verSetores($sqlSetor,$i) 
+                        $idSetor = $setor->getIdSetor();                                   
                 ?>
-                    <li><a href="#"> .: Categoria 01</a></li>
+                    <li><a href="#"> .: <?php echo $setor->getNomeSetor(); ?></a></li>
                         <ul>
+                            <?php 
+                                
+                            ?>
                             <li><a href="#">.: Produto 1</a></li>
                             <li><a href="#">.: Produto 2</a></li>
                             <li><a href="#">.: Produto 3</a></li>
