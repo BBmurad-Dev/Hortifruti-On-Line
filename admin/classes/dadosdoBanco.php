@@ -75,13 +75,16 @@
     }
 
     class DadosCategoria extends conexaoMySQL {
-        private $id_categ, $nome_categ, $slug_categ, $ordem_categ, $ativo_categ;
+        private $id_categ, $id_setorcateg, $nome_categ, $slug_categ, $ordem_categ, $ativo_categ;
         
         public function setIdCateg($id_categ) {
             $this-> id_categ = $id_categ;
         }
         public function getIdCateg() {
             return $this-> id_categ;
+        }
+        public function getIdSetorCateg () {
+            return $this-> id_setorcateg;
         }
         public function getNomeCateg() {
             return $this-> nome_categ;
@@ -101,11 +104,12 @@
             $qry   = self::executarSQL($sql);
             $linha = self::listar($qry);
 
-            $this->id_categ    = $linha["id_categ"];
-            $this->nome_categ  = $linha["nome_categ"];
-            $this->slug_categ  = $linha["slug_categ"];
-            $this->ordem_categ = $linha["ordem_categ"];
-            $this->ativo_categ = $linha["ativo_categ"];
+            $this->id_categ      = $linha["id_categ"];
+            $this->id_setorcateg = $linha["id_setorcateg"];
+            $this->nome_categ    = $linha["nome_categ"];
+            $this->slug_categ    = $linha["slug_categ"];
+            $this->ordem_categ   = $linha["ordem_categ"];
+            $this->ativo_categ   = $linha["ativo_categ"];
         }
 
         public function comboBoxCateg($id) {
@@ -140,11 +144,12 @@
             $row = mysqli_fetch_assoc($qry);
             
             if ($row) {
-                $this->id_categ    = $row["id_categ"];
-                $this->nome_categ  = $row["nome_categ"];
-                $this->slug_categ  = $row["slug_categ"];
-                $this->ordem_categ = $row["ordem_categ"];
-                $this->ativo_categ = $row["ativo_categ"];
+                $this->id_categ      = $row["id_categ"];
+                $this->id_setorcateg = $row["id_setorcateg"];
+                $this->nome_categ    = $row["nome_categ"];
+                $this->slug_categ    = $row["slug_categ"];
+                $this->ordem_categ   = $row["ordem_categ"];
+                $this->ativo_categ   = $row["ativo_categ"];
                 return true;
             }            
                 return false;

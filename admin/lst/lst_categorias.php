@@ -14,6 +14,7 @@
             <th>ID Categ</th>
             <th>Categoria</th>
             <th>Slug Categ</th>
+            <th>Setor da Categ</th>
             <th>Exibição</th>
             <th>Ativo</th>
             <th>Editar</th>
@@ -25,7 +26,7 @@
             $lista->listaCategoria();        
         ?>        
         <tr>
-            <td colspan="7"> <?php $lista->geraNumeros(); ?> </td>
+            <td colspan="8"> <?php $lista->geraNumeros(); ?> </td>
         </tr>
     </tbody>
 </table>

@@ -57,11 +57,17 @@
             $cont = 0;
             while ($linha = self::results()) {
                 $cont++;
+
+                $sqlSetor  = "SELECT * FROM setor  WHERE id_setor = '$linha[id_setorcateg]'";
+                $result = self::executarSQL($sqlSetor);
+                $setor  = mysqli_fetch_assoc($result);
+
                 echo "
                 <tr>
                     <td> $linha[id_categ]    </td>
                     <td> $linha[nome_categ]  </td>
                     <td> $linha[slug_categ]  </td>
+                    <td> $setor[nome_setor] </td>
                     <td> $linha[ordem_categ] </td>
                     <td> $linha[ativo_categ] </td>
                     <td><a href='./index.php?link=11&acao=Alterar&id=$linha[id_categ]'><img src='./imagens/alterar.gif' alt='Alterar' border='0'></a></td>

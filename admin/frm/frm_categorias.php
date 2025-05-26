@@ -8,11 +8,12 @@
         $dados = new DadosCategoria();
         $dados->setIdCateg($id);
         $dados->mostrarDadosCateg();
-
-        $nomeCateg  = $dados->getNomeCateg();
-        $slugCateg  = $dados->getSlugCateg();
-        $ordemCateg = $dados->getOrdemCateg();
-        $ativoCateg = $dados->getAtivoCateg();
+        
+        $idSetorCateg = $dados->getIdSetorCateg();
+        $nomeCateg    = $dados->getNomeCateg();
+        $slugCateg    = $dados->getSlugCateg();
+        $ordemCateg   = $dados->getOrdemCateg();
+        $ativoCateg   = $dados->getAtivoCateg();
     }
 ?>
 
@@ -28,7 +29,7 @@
         ?> de Categorias
     </h2>
     <form action="./op/op_categorias.php" method="post" enctype="multipart/form-data">
-        <div class="dois-campos">
+        <div class="tres-campos">
             <label for="">
                 <span class="titulo">Nome da Categoria</span>
                 <input type="text" name="txt_nome_categ" id="txt_nome_categ" value="<?php if ($acao!="") { echo $nomeCateg; } ?>">
@@ -37,8 +38,16 @@
                 <span class="titulo">Slug da Categoria</span>
                 <input type="text" name="txt_slug_categ" id="txt_slug_categ" value="<?php if ($acao!="") { echo $slugCateg; } ?>">
             </label>
+            <label for="">
+                <span class="titulo">Selecione o Setor</span>
+                <select name="txt_id_setorcateg" id="txt_id_setorcateg">
+                    <?php 
+                        $comboBox = new DadosSetor ();
+                        $comboBox->comboBoxSetor($idSetorProd);
+                    ?>
+                </select>
         </div>
-        <div class="dois-campos">
+        <div class="dois-campos">            
             <label for="">
                 <span class="titulo">Ordem da Categoria</span>
                 <input type="text" name="txt_ordem_categ" id="txt_ordem_categ" value="<?php if ($acao!="") { echo $ordemCateg; } ?>">

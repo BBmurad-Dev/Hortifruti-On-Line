@@ -7,14 +7,15 @@
     $categoria = new manipulaDados ();
     $categoria->setTabela("categoria");
 
+    $id_setorcateg = $_POST["txt_id_setorcateg"];
     $nome_categ  = $_POST["txt_nome_categ"];
     $slug_categ  = $_POST["txt_slug_categ"];
     $ordem_categ = $_POST["txt_ordem_categ"];
     $ativo_categ = $_POST["txt_ativo_categ"];
 
     if ($acao=="Inserir") {
-    $categoria->setCampos("nome_categ, slug_categ, ordem_categ, ativo_categ");
-    $categoria->setDados("'$nome_categ', '$slug_categ','$ordem_categ', '$ativo_categ'");
+    $categoria->setCampos("nome_categ, slug_categ, id_setorcateg, ordem_categ, ativo_categ");
+    $categoria->setDados("'$nome_categ', '$slug_categ', '$id_setorcateg','$ordem_categ', '$ativo_categ'");
     $categoria->inserir();
     echo "<script type='text/javascript'>location.href='../index.php?link=12'</script>";
     }
@@ -22,10 +23,11 @@
     if ($acao=="Alterar") {
         $categoria->setCampoTabela("id_categ");
         $categoria->setValorPesquisa("$id");
-        $categoria->setCampos  ("nome_categ  = '$nome_categ', 
-                                 slug_categ  = '$slug_categ',
-                                 ordem_categ = '$ordem_categ',
-                                 ativo_categ = '$ativo_categ'");        
+        $categoria->setCampos   ("  nome_categ    = '$nome_categ', 
+                                    slug_categ    = '$slug_categ',
+                                    id_setorcateg = '$id_setorcateg',
+                                    ordem_categ   = '$ordem_categ',
+                                    ativo_categ   = '$ativo_categ'");        
         $categoria->alterar();
         echo "<script type='text/javascript'>location.href='../index.php?link=12'</script>";
     }

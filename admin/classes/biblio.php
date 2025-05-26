@@ -42,11 +42,5 @@
         imagedestroy($nova);
         imagedestroy($img);
         return ($nome);
-
     }
-
-    
-
-
-
 ?>
