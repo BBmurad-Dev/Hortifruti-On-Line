@@ -12,7 +12,7 @@
                     $sqlSetor   = "SELECT * FROM setor";
                     $total = $setor->totalRegistrosSetor($sqlSetor);
                     for ($i=0; $i<$total; $i++) {  
-                        $setor->verSetores($sqlSetor,$i) 
+                        $setor->verSetores($sqlSetor,$i);
                         $idSetor = $setor->getIdSetor();                                   
                 ?>
                     <li><a href="#"> .: <?php echo $setor->getNomeSetor(); ?></a></li>

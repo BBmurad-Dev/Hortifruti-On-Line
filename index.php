@@ -3,8 +3,7 @@
     $setor = new DadosSetor();
     $categoria = new DadosCategoria();
     $medida = new DadosMedida();
-    $produto = new DadosProduto();
-    
+    $produto = new DadosProduto();    
 ?>
 
 <!DOCTYPE html>
