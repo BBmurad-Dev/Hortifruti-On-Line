@@ -72,6 +72,16 @@
             }            
                 return false;
         }
+
+        public function verLinkSetor ($valor) {
+            $sql_verlink = "SELECT * FROM setor WHERE id_setor = '$valor'";
+            $qry_verlink = self::executarSQL($sql_verlink);
+            $linha_verlink = self::listar($qry_verlink);
+
+            $linkSet = $linha_verlink['nome_setor'];
+
+            return $linkSet;
+        }
     }
 
     class DadosCategoria extends conexaoMySQL {
@@ -154,6 +164,16 @@
             }            
                 return false;
         }
+
+        public function verLinkCateg($valor) {
+            $sql_verlink = "SELECT * FROM categoria WHERE id_categ = '$valor'";
+            $qry_verlink = self::executarSQL($sql_verlink);
+            $linha_verlink = self::listar($qry_verlink);
+
+            $linkSet = $linha_verlink['nome_categ'];
+
+            return $linkSet;
+        }
     }
 
     class DadosMedida extends conexaoMySQL {
@@ -230,6 +250,16 @@
                 return true;
             }            
                 return false;
+        }
+
+        public function verLinkMedida($valor) {
+            $sql_verlink = "SELECT * FROM medida WHERE id_medida = '$valor'";
+            $qry_verlink = self::executarSQL($sql_verlink);
+            $linha_verlink = self::listar($qry_verlink);
+
+            $linkSet = $linha_verlink['nome_medida'];
+
+            return $linkSet;
         }
     }
 
