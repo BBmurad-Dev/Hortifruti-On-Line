@@ -24,7 +24,7 @@
                         @$link = $_GET["link"];
 
                         $pag[1] = "home.php";
-                        $pag[2] = "home.php";
+                        $pag[2] = "detalhes.php";
                        
 
                         if (!empty($link)) {
