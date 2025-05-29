@@ -19,7 +19,7 @@
     /********** VERIFICA CONFIGURA E FAZ O UPLOAD DA IMAGEM **********/
 
     if ($imagem["name"]!="") {
-        $pasta      = "../banners";
+        $pasta      = "../imagens/banners/";
         $permitido  = array("image/jpg", "image/jpeg", "image/pjpeg");
         $tmp        = $imagem['tmp_name'];
         $name       = $imagem["name"];
@@ -31,16 +31,16 @@
         $proximoId = $ultReg->pegarProximoId();
 
         if (!empty($name) && in_array($type, $permitido)) {
-            $txt_nomeimagem = "bn-" . $proximoId . ".jpg";
-            upload_jpg($tmp, $txt_nomeimagem, 1200, $pasta);            
+            $txt_nomeimagem = "banner-" . $proximoId . ".jpg";
+            upload_otimizado($tmp, $txt_nomeimagem, $pasta);            
         }
         else if (!empty($name) && $type=="image/png") { 
-            $txt_nomeimagem = "bn-" . $proximoId . ".png";
-            upload_png($tmp, $txt_nomeimagem, 1200, $pasta);
+            $txt_nomeimagem = "banner-" . $proximoId . ".png";
+            upload_otimizado($tmp, $txt_nomeimagem, $pasta);
         }
         else if (!empty($name) && $type=="image/gif") { 
-            $txt_nomeimagem = "bn-" . $proximoId . ".gif";
-            upload_gif($tmp, $txt_nomeimagem, 1200, $pasta);
+            $txt_nomeimagem = "banner-" . $proximoId . ".gif";
+            upload_otimizado($tmp, $txt_nomeimagem, $pasta);
         }
     }
 
@@ -69,7 +69,7 @@
         $banner->setCampoTabela("id_banner");
         $banner->setValorPesquisa("$id");
         $banner->excluir();
-        unlink("../banners/".$txt_nomeimagem);
+        unlink("../imagens/banners/".$txt_nomeimagem);
         echo "<script type='text/javascript'>location.href='../index.php?link=16'</script>";
     }
 ?>

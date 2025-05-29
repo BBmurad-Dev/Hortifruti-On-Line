@@ -47,7 +47,7 @@
             <label class="imagem">
                 <span class="titulo"><?php if ($acao!="") { 
                     echo "Imagem atual: ".$imagemBanner; 
-                    } else echo "Selecione uma imagem"; ?>
+                    } else echo "Selecione uma imagem (Obrigatório: 1200px x 150px)"; ?>
                 </span>
                 <input type="file" name="img">
             </label>

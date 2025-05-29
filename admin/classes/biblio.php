@@ -1,46 +1,21 @@
 <?php
 
-    function upload_jpg($tmp, $nome, $largura, $pasta) {
-
-        $img    = imagecreatefromjpeg($tmp);
-        $x      = imagesx($img);
-        $y      = imagesy($img);
-        $altura = ($largura*$y)/$x;
-        $nova   = imagecreatetruecolor($largura, $altura);
-        imagecopyresampled($nova, $img, 0, 0, 0, 0, $largura, $altura, $x, $y);
-        imagejpeg($nova, "$pasta/$nome");
-        imagedestroy($nova);
-        imagedestroy($img);
-        return ($nome);
-
+    function upload_otimizado ($tmp, $nome, $pasta) {
+    // Verifica se a pasta existe, se não, cria
+    if (!file_exists($pasta)) {
+        mkdir($pasta, 0755, true);
+    }   
+     
+    // Monta o caminho completo do arquivo
+    $caminho_completo = $pasta . '/' . $nome;
+    
+    // Move o arquivo temporário para o destino final
+    if (move_uploaded_file($tmp, $caminho_completo)) {
+        return $nome;
+    } else {
+        return false; // Retorna false em caso de falha
     }
+}
 
-    function upload_png($tmp, $nome, $largura, $pasta) {
-
-        $img    = imagecreatefrompng($tmp);
-        $x      = imagesx($img);
-        $y      = imagesy($img);
-        $altura = ($largura*$y)/$x;
-        $nova   = imagecreatetruecolor($largura, $altura);
-        imagecopyresampled($nova, $img, 0, 0, 0, 0, $largura, $altura, $x, $y);
-        imagejpeg($nova, "$pasta/$nome");
-        imagedestroy($nova);
-        imagedestroy($img);
-        return ($nome);
-
-    }
-
-    function upload_gif($tmp, $nome, $largura, $pasta) {
-
-        $img    = imagecreatefromgif($tmp);
-        $x      = imagesx($img);
-        $y      = imagesy($img);
-        $altura = ($largura*$y)/$x;
-        $nova   = imagecreatetruecolor($largura, $altura);
-        imagecopyresampled($nova, $img, 0, 0, 0, 0, $largura, $altura, $x, $y);
-        imagejpeg($nova, "$pasta/$nome");
-        imagedestroy($nova);
-        imagedestroy($img);
-        return ($nome);
-    }
+   
 ?>

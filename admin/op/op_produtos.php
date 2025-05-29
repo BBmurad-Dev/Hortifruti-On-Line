@@ -39,15 +39,15 @@
 
         if (!empty($name) && in_array($type, $permitido)) {
             $txt_nomeimagemP = "Prodp-" . $proximoId . ".jpg";
-            upload_jpg($tmp, $txt_nomeimagemP, 90, $pasta);            
+            upload_otimizado($tmp, $txt_nomeimagemP, $pasta);            
         }
         else if (!empty($name) && $type=="image/png") { 
             $txt_nomeimagemP = "Prodp-" . $proximoId . ".png";
-            upload_png($tmp, $txt_nomeimagemP, 90, $pasta);
+            upload_otimizado($tmp, $txt_nomeimagemP, $pasta);
         }
         else if (!empty($name) && $type=="image/gif") { 
             $txt_nomeimagemP = "Prodp-" . $proximoId . ".gif";
-            upload_gif($tmp, $txt_nomeimagemP, 90, $pasta);
+            upload_otimizado($tmp, $txt_nomeimagemP, $pasta);
         }
     }
 
@@ -67,15 +67,15 @@
 
         if (!empty($name) && in_array($type, $permitido)) {
             $txt_nomeimagemG = "Prodg-" . $proximoId . ".jpg";
-            upload_jpg($tmp, $txt_nomeimagemG, 90, $pasta);            
+            upload_otimizado($tmp, $txt_nomeimagemG, $pasta);            
         }
         else if (!empty($name) && $type=="image/png") { 
             $txt_nomeimagemG = "Prodg-" . $proximoId . ".png";
-            upload_png($tmp, $txt_nomeimagemG, 90, $pasta);
+            upload_otimizado($tmp, $txt_nomeimagemG, $pasta);
         }
         else if (!empty($name) && $type=="image/gif") { 
             $txt_nomeimagemG = "Prodg-" . $proximoId . ".gif";
-            upload_gif($tmp, $txt_nomeimagemG, 90, $pasta);
+            upload_otimizado($tmp, $txt_nomeimagemG, $pasta);
         }
     }
 
