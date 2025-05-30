@@ -57,14 +57,15 @@
                     $totalPromo = $produto->totalRegistrosProd($sqlPromo);
                             for ($iPromo=0; $iPromo<$totalPromo; $iPromo++) {
                                 $produto->verProdutos($sqlPromo, $iPromo);
-                                $idProdPromo = $produto->getIdProduto(); ?>
+                                $idProdPromo = $produto->getIdProduto();
+                                $idMedidaProd = $produto->getIdMedidaProd(); ?>
                     <li>
                         <a href="index.php?link=2&idProd=<?= $idProdPromo; ?>"> 
                             <figure>
                                 <img src="admin/imagens/produtos/<?php echo $produto->getImagemPProd();?>" alt="<?php echo $produto->getSlugProd();?>">
                                 <figcaption><?php echo $produto->getNomeProd();?></figcaption>
                             </figure>
-                            <span> R$ <?php echo $produto->getPrecoProd();?> </span>
+                            <span> R$ <?php echo $produto->getPrecoProd();?> <span class="abrevMedida"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
                             <form action="">
                                 <input type="submit" value="">
                             </form>
@@ -76,14 +77,15 @@
                     $totalProdSetor = $produto->totalRegistrosProd($sqlProdSetor);
                             for ($iProdSetor=0; $iProdSetor<$totalProdSetor; $iProdSetor++) {
                                 $produto->verProdutos($sqlProdSetor, $iProdSetor);
-                                $idProdSetor = $produto->getIdProduto(); ?>
+                                $idProdSetor = $produto->getIdProduto();
+                                $idMedidaProd = $produto->getIdMedidaProd(); ?> 
                     <li>
                         <a href="index.php?link=2&idProd=<?= $idProdSetor; ?>"> 
                             <figure>
                                 <img src="admin/imagens/produtos/<?php echo $produto->getImagemPProd();?>" alt="<?php echo $produto->getSlugProd();?>">
                                 <figcaption><?php echo $produto->getNomeProd();?></figcaption>
                             </figure>
-                            <span> R$ <?php echo $produto->getPrecoProd();?> </span>
+                            <span> R$ <?php echo $produto->getPrecoProd();?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
                             <form action="">
                                 <input type="submit" value="">
                             </form>
@@ -95,14 +97,15 @@
                     $totalProdCateg = $produto->totalRegistrosProd($sqlProdCateg);
                             for ($iProdCateg=0; $iProdCateg<$totalProdCateg; $iProdCateg++) {
                                 $produto->verProdutos($sqlProdCateg, $iProdCateg);
-                                $idProdCateg = $produto->getIdProduto(); ?>
+                                $idProdCateg = $produto->getIdProduto();
+                                $idMedidaProd = $produto->getIdMedidaProd(); ?>
                     <li>
                         <a href="index.php?link=2&idProd=<?= $idProdCateg; ?>"> 
                             <figure>
                                 <img src="admin/imagens/produtos/<?php echo $produto->getImagemPProd();?>" alt="<?php echo $produto->getSlugProd();?>">
                                 <figcaption><?php echo $produto->getNomeProd();?></figcaption>
                             </figure>
-                            <span> R$ <?php echo $produto->getPrecoProd();?> </span>
+                            <span> R$ <?php echo $produto->getPrecoProd();?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
                             <form action="">
                                 <input type="submit" value="">
                             </form>

@@ -257,7 +257,7 @@
             $qry_verlink = self::executarSQL($sql_verlink);
             $linha_verlink = self::listar($qry_verlink);
 
-            $linkSet = $linha_verlink['nome_medida'];
+            $linkSet = $linha_verlink['slug_medida'];
 
             return $linkSet;
         }

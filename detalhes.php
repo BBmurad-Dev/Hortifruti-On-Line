@@ -2,6 +2,9 @@
     $idProduto = $_GET['idProd']; 
     $produto->setIdProduto($idProduto);
     $produto->mostrarDadosProduto();
+    $idMedidaProd = $produto->getIdMedidaProd($idProduto);
+    $idSetorProd = $produto->getIdSetorProd($idProduto);
+    $idCategProd = $produto->getIdCategProd($idProduto);
 ?>
 
 <div id="detalhe">
@@ -22,7 +25,8 @@
                     $total = $setor->totalRegistrosSetor($sqlSetor);
                     for ($i=0; $i<$total; $i++) {  
                         $setor->verSetores($sqlSetor,$i);
-                        $idLinkSetor = $setor->getIdSetor();                                   
+                        $idLinkSetor = $setor->getIdSetor();
+                                                       
                 ?>
                     <li><a href="?linkSetor=<?= @$idLinkSetor; ?>"> .: <?php echo $setor->getNomeSetor(); ?></a></li>
                         <ul>
@@ -52,12 +56,13 @@
             </div>
             <div id="preco-prod">
                 <spain>Valor: </spain><strong> R$ <?= $produto->getPrecoProd();?></strong>
+                <span class="abrevMedida2"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
             </div>
             <div class="set-grp">
-                <h3>Setor: Frutas</h3>
+                <h3>Setor: <?= $setor->verLinkSetor($idSetorProd); ?> </h3>
             </div>
             <div class="set-grp cx2">
-                <h3>Grupo: Hortifruti</h3>
+                <h3>Categoria: <?= $categoria->verLinkCateg($idCategProd); ?> </h3>
             </div>
             <div id="descricao">
                 <h2>Descrição Rápida</h2>
