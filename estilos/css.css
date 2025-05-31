@@ -292,6 +292,9 @@ div#titulo-prod {
     width: 48%;
     height: 100px;
     float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid #ccc;
     background-color: white;
 }
@@ -464,6 +467,13 @@ section.vitrine {
     margin: 10px 0;
 }
 
+section.vitrine h3.sugestao {
+    color: #fff;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+
+}
+
 section.vitrine, section.vitrine-detalhe {
     padding: 5px;
     width: 99%;
@@ -524,11 +534,11 @@ section.vitrine span.abrevMedida {
     color: black;
 }
 
-span.abrevMedida2 {
+span.abrevMedida2 {    
     margin-left: 2px;
-    font-size: 12px;
-    font-weight: 900;
-    color: black;
+    font-size: 18px;
+    font-weight: 300;
+    color: red;
 }
 
 section.vitrine input {
@@ -543,6 +553,41 @@ section.vitrine input:hover {
     cursor: pointer;
 }
 
+table {
+    float: left;
+    border-collapse: collapse;
+    border: 1px solid #333;
+    background: #fff;
+    width: 100%;
+    margin-top: 8px;
+    text-align: center;
+}
+
+table thead {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: var(--cor1);
+}
+
+table thead tr th {
+    padding: 3px 0;
+}
+
+table tbody {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: #000;
+}
+table tbody tr td {
+    padding: 3px;
+}
+
+table tbody tr td:hover {
+    background: #f4f4f4;
+}
+
 div.set-grp { 
     width: 23%;
     height: 31px;
@@ -552,6 +597,16 @@ div.set-grp {
     background-color: #fff;
     text-align: center;
     padding-top: 15px;
+}
+
+div.set-grp h3 {
+    display: inline;
+    color: red;
+}
+
+div.set-grp h3.set-grp2 {
+    display: inline;
+    color: black;
 }
 
 div.cx2 {

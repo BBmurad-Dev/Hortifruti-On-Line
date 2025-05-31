@@ -55,14 +55,13 @@
                 <h1><a href="#"><?= $produto->getNomeProd();?></a></h1>
             </div>
             <div id="preco-prod">
-                <spain>Valor: </spain><strong> R$ <?= $produto->getPrecoProd();?></strong>
-                <span class="abrevMedida2"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
+                <spain>Preço/</spain><span class="abrevMedida2">(<?= $medida->verLinkMedida($idMedidaProd);?>):</span><strong> R$ <?= $produto->getPrecoProd();?></strong>          
             </div>
             <div class="set-grp">
-                <h3>Setor: <?= $setor->verLinkSetor($idSetorProd); ?> </h3>
+                <h3>Setor: </h3><h3 class="set-grp2"> <?= $setor->verLinkSetor($idSetorProd); ?> </h3>
             </div>
             <div class="set-grp cx2">
-                <h3>Categoria: <?= $categoria->verLinkCateg($idCategProd); ?> </h3>
+                <h3>Categoria: </h3> <h3 class="set-grp2"><?= $categoria->verLinkCateg($idCategProd); ?></h3> 
             </div>
             <div id="descricao">
                 <h2>Descrição Rápida</h2>
@@ -74,8 +73,32 @@
                     </form>
             </div>
         </section>
-
+        <section class="vitrine">
+            <h3 class="cor1 sugestao"> Sugestões de Compras </h3>
+            <ul>
+                <?php
+                $sugestoes = $produto->verSugestoes($idCategProd);
+                
+                // Limita a exibição a 5 produtos ou ao total disponível
+                $totalExibir = min(5, count($sugestoes));
+                
+                for ($i = 0; $i < $totalExibir; $i++) {
+                    $prod = $sugestoes[$i];
+                ?>
+                <li>
+                    <a href="index.php?link=2&idProd=<?= $prod['id_prod']; ?>"> 
+                        <figure>
+                            <img src="admin/imagens/produtos/<?php echo $prod['imagemp_prod'];?>" alt="<?php echo $prod['slug_prod'];?>">
+                            <figcaption><?php echo $prod['nome_prod'];?></figcaption>
+                        </figure>
+                        <span> R$ <?php echo $prod['preco_prod'];?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($prod['id_medidaprod']);?>)</span>
+                        <form action="">
+                            <input type="submit" value="">
+                        </form>
+                    </a>
+                </li> 
+                <?php } ?>           
+            </ul>
+        </section>
     </div>
-
-
 </div>

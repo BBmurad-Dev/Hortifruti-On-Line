@@ -418,6 +418,20 @@
             }            
                 return false;
         }
-        
+
+        public function verSugestoes($idCateg) {
+            $sql_sugestao = "SELECT * FROM produto WHERE id_categprod = '$idCateg' AND ativo_prod='SIM'"; 
+            $qry_sugestao = self::executarSQL($sql_sugestao);
+            $produtoSugestao = array();
+            
+            while ($linha = self::listar($qry_sugestao)) {
+                $produtoSugestao[] = $linha; // Armazena todos os produtos encontrados
+            }
+            
+            // Embaralha o array para ordem aleatória
+            shuffle($produtoSugestao);
+            
+            return $produtoSugestao; // Retorna o array completo (já randomizado)
+        }          
     }
 ?>

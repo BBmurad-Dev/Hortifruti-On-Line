@@ -25,6 +25,7 @@
 
                         $pag[1] = "home.php";
                         $pag[2] = "detalhes.php";
+                        $pag[3] = "carrinho.php";
                        
 
                         if (!empty($link)) {
