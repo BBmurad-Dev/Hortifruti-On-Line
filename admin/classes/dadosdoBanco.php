@@ -432,6 +432,21 @@
             shuffle($produtoSugestao);
             
             return $produtoSugestao; // Retorna o array completo (já randomizado)
-        }          
+        }
+        
+        public function verSugestoesCarrinho () {
+            $sql_sc = "SELECT * FROM produto WHERE ativo_prod='SIM'"; 
+            $qry_sc = self::executarSQL($sql_sc);
+            $produtoSC = array();
+            
+            while ($linhaSC = self::listar($qry_sc)) {
+                $produtoSC[] = $linhaSC; // Armazena todos os produtos encontrados
+            }
+            
+            // Embaralha o array para ordem aleatória
+            shuffle($produtoSC);
+            
+            return $produtoSC; // Retorna o array completo (já randomizado)
+        } 
     }
 ?>

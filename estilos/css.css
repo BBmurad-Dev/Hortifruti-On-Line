@@ -376,6 +376,22 @@ div#comprar-prod > form > input {
     background: url(../imagens/comprar_detalhes.png);
 }
 
+div#base-carrinho, #base-carrinho h2 {
+    width: 1200px;
+    margin: 0 0 10px 0;
+}
+
+div#linha-botoes {
+    margin-top: 10px;
+    padding: 5px;
+    text-align: right;
+    cursor: pointer;
+    width: 99,5%;
+    height: 40px;
+    border: 1px solid #ccc;
+    background: #fff;
+
+}
 
 /******************************/
 /* INICIO DAS CLASSES DO SITE */
@@ -554,7 +570,6 @@ section.vitrine input:hover {
 }
 
 table {
-    float: left;
     border-collapse: collapse;
     border: 1px solid #333;
     background: #fff;
@@ -613,5 +628,25 @@ div.cx2 {
     margin-left: 16px;
 }
 
+img.img-carrinho {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-left: 10px;
+}
 
+strong.nome-produto {
+    width: 80%;
+    height: 60px;
+    margin-left: 10px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+section.vitrine > ul > li.carrinho-vitrine {
+    width: 155px;
+    height: 220px;
+    margin-left: 5px;
+}
 
