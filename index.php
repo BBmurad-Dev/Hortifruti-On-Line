@@ -1,9 +1,12 @@
 <?php
     include_once("admin/classes/dadosdoBanco.php");    
-    $setor = new DadosSetor();
-    $categoria = new DadosCategoria();
-    $medida = new DadosMedida();
-    $produto = new DadosProduto();    
+    $setor      = new DadosSetor();
+    $categoria  = new DadosCategoria();
+    $medida     = new DadosMedida();
+    $produto    = new DadosProduto();
+
+    session_start();
+
 ?>
 
 <!DOCTYPE html>

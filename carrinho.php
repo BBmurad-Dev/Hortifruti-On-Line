@@ -1,3 +1,9 @@
+<?php 
+    $carrinho = new DadosCarrinho();
+    $id_pedidoCarro  = $_SESSION['idPedidoHorti'];
+
+?> 
+
 <div id="base-carrinho">
     <h2><img src="imagens/barra-carrinho1.png" alt="Carrinho Pagina Inicial"></h2>
     <h3><img src="imagens/meu-carrinho.png" alt="Carrinho Pagina Inicial"></h3>
@@ -6,31 +12,43 @@
             <table cellpadding="0" cellspacing="0" border="1">
                 <thead>
                     <tr>
-                        <th>Descrição do Produto</th>
-                        <th>Quantidade</th>
-                        <th>Preço Unitário</th>
-                        <th>Subtotal</th>
-                        <th>Atualizar</th>
+                        <th>PRODUTOS</th>
+                        <th>QUANTIDADE</th>
+                        <th>MEDIDA</th>
+                        <th>PREÇO</th>
+                        <th>SUBTOTAL</th>
+                        <th>ATUALIZAR</th>
+                        <th>EXCLUIR</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                        $sql        = "SELECT c.*, p.* FROM carrinho c, produto p WHERE c.id_prodcarro = p.id_prod AND c.id_pedidocarro = '$id_pedidoCarro'";
+                        $totalReg   = $carrinho->totalRegistrosCarro($sql);
+                        $valorTotal = 0;
+                        
+                        for ($iCarro = 0; $iCarro < $totalReg; $iCarro++) {
+                            $carrinho->verCarrinho($sql, $iCarro);
+                    ?>
+                        <tr>
+                            <td>
+                                <img class="img-carrinho" src="admin/imagens/produtos/<?= $carrinho->getImagemGProd();?>" alt="<?= $carrinho->getNomeProd() ?>">
+                                <strong class="nome-produto"><?= $carrinho->getNomeProd();?></strong>
+                            </td>
+                            <td> 
+                                <input type="number" id="txt_qtde" name="txt_qtde" value=<?= $carrinho->getQtdeCarro();?> size="3" maxlength="3" min="1" max="20" step="1" /> 
+                            </td>
+                            <td><?= $carrinho->getPrecoProd()?></td>
+                            <td>R$ 3,89 </a></td>
+                            <td>
+                                <input type="submit" name="alterar" value="Atualizar">
+                            </td>
+                        </tr>                        
+                    <?php } ?> 
                     <tr>
-                        <td>
-                            <img class="img-carrinho" src="admin/imagens/produtos/Prodg-1.jpg" alt="">
-                            <strong class="nome-produto">Nome do Produto</strong>
-                        </td>
-                        <td> 
-                            <input type="number" id="qtdProd" name="qtdProd" value="1" size="3" maxlength="3" min="1" max="20" step="1" /> 
-                        </td>
-                        <td>R$ 3,89</td>
-                        <td>R$ 3,89 </a></td>
-                        <td>
-                            <input type="submit" name="alterar" value="Atualizar">
-                        </td>
+                        <td colspan="5"> Valor Total dos Produtos: R$ </td>                        
                     </tr>
-                    <tr>
-                        <td colspan="5"> Valor Total dos Produtos: R$ </td>
-                    </tr>
+                    <?php echo "Id carro: " . $carrinho->getIdCarro() . "Id Pedido: " . $id_pedidoCarro . "Id Produto: " . $carrinho->getIdProdCarro() . "quantidade : " . $carrinho->getQtdeCarro() . "valor carrinho: " . $carrinho->getValorCarro(); ?> 
                 </tbody>
             </table>
         </form>

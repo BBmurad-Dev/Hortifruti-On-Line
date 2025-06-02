@@ -396,8 +396,7 @@
             // Mover o ponteiro para a linha desejada
             if (!mysqli_data_seek($qry, $i)) {
                 return false; // Linha não encontrada
-            }
-            
+            }            
             // Obter a linha como array associativo
             $row = mysqli_fetch_assoc($qry);
             
@@ -422,15 +421,12 @@
         public function verSugestoes($idCateg) {
             $sql_sugestao = "SELECT * FROM produto WHERE id_categprod = '$idCateg' AND ativo_prod='SIM'"; 
             $qry_sugestao = self::executarSQL($sql_sugestao);
-            $produtoSugestao = array();
-            
+            $produtoSugestao = array();            
             while ($linha = self::listar($qry_sugestao)) {
                 $produtoSugestao[] = $linha; // Armazena todos os produtos encontrados
-            }
-            
+            }            
             // Embaralha o array para ordem aleatória
-            shuffle($produtoSugestao);
-            
+            shuffle($produtoSugestao);            
             return $produtoSugestao; // Retorna o array completo (já randomizado)
         }
         
@@ -441,12 +437,148 @@
             
             while ($linhaSC = self::listar($qry_sc)) {
                 $produtoSC[] = $linhaSC; // Armazena todos os produtos encontrados
-            }
-            
+            }            
             // Embaralha o array para ordem aleatória
-            shuffle($produtoSC);
-            
+            shuffle($produtoSC);            
             return $produtoSC; // Retorna o array completo (já randomizado)
         } 
+    }
+
+    class DadosCarrinho extends conexaoMySQL {
+
+        private $id_carro, $id_pedidocarro, $id_prodcarro, $quantidade_carro, $valor_carro;
+
+        private $id_prod, $id_categprod, $id_setorprod, $nome_prod, $slug_prod, $descricao_prod, $id_medidaprod, $preco_prod, $promocao_prod, $imagemp_prod, $imagemg_prod, $ativo_prod;
+
+        public function getIdCarro() {
+            $this-> id_carro;
+        }
+        public function getIdPedidoCarro() {
+            $this-> id_pedidocarro;
+        }
+        public function getIdProdCarro () {
+            $this-> id_prodcarro;
+        }
+        public function getQtdeCarro () {
+            $this-> quantidade_carro;
+        }        
+        public function getValorCarro () {
+            $this-> valor_carro;
+        }        
+        public function setIdProduto($id_prod) {
+            $this-> id_prod = $id_prod;
+        }
+        public function getIdProduto() {
+            return $this-> id_prod;
+        }
+        public function getIdCategProd() {
+            return $this-> id_categprod;
+        }
+        public function getIdSetorProd() {
+            return $this-> id_setorprod;
+        }
+        public function getNomeProd() {
+            return $this-> nome_prod;
+        }
+        public function getSlugProd() {
+            return $this-> slug_prod;
+        }
+        public function getDescricaoProd() {
+            return $this-> descricao_prod;
+        }
+        public function getIdMedidaProd() {
+            return $this-> id_medidaprod;
+        }
+        public function getPrecoProd() {
+            return $this-> preco_prod;
+        }
+        public function getPromocaoProd() {
+            return $this-> promocao_prod;
+        }
+        public function getImagemPProd() {
+            return $this-> imagemp_prod;
+        }
+        public function getImagemGProd() {
+            return $this-> imagemg_prod;
+        }
+        public function getAtivoProd() {
+            return $this-> ativo_prod;
+        }
+
+        public function mostrarDadosCarrinho() {
+            $sql   = "SELECT c.*, p.* FROM carrinho c, produto p WHERE c.id_prodcarro = p.id_prod AND c.id_pedidocarro = '$this->id_pedidocarro'";
+            $qry   = self::executarSQL($sql);
+            $linha = self::listar($qry);
+
+            /* Tabela Produtos */
+            $this->id_prod          = $linha["id_prod"];
+            $this->id_categprod     = $linha["id_categprod"];
+            $this->id_setorprod     = $linha["id_setorprod"];
+            $this->nome_prod        = $linha["nome_prod"];
+            $this->slug_prod        = $linha["slug_prod"];
+            $this->descricao_prod   = $linha["descricao_prod"];
+            $this->id_medidaprod    = $linha["id_medidaprod"];
+            $this->preco_prod       = $linha["preco_prod"];
+            $this->promocao_prod    = $linha["promocao_prod"];
+            $this->imagemp_prod     = $linha["imagemp_prod"];
+            $this->imagemg_prod     = $linha["imagemg_prod"];
+            $this->ativo_prod       = $linha["ativo_prod"];  
+            /* Tabela Pedidos*/  
+            $this->id_carro         = $linha["id_carro"]; 
+            $this->id_pedidocarro   = $linha["id_pedidocarro"]; 
+            $this->id_prodcarro     = $linha["id_prodcarro"]; 
+            $this->quantidade_carro = $linha["quantidade_carro"]; 
+            $this->valor_carro      = $linha["valor_carro"];                       
+        }
+
+        public function pegarProximoId() {
+        $sql = "SELECT AUTO_INCREMENT 
+                FROM information_schema.TABLES 
+                WHERE TABLE_SCHEMA = DATABASE() 
+                AND TABLE_NAME = 'carrinho'";
+        $qry = self::executarSQL($sql);
+        $linha = self::listar($qry);
+        return $linha["AUTO_INCREMENT"]; // Retorna o próximo ID que será usado
+        }
+
+        public function totalRegistrosCarro($sql){
+            $qry   = self::executarSQL($sql);
+            $total = self::contaDados($qry);
+            return $total; 
+        }
+
+        public function verCarrinho($sql, $i) {
+            $qry = self::executarSQL($sql);           
+
+            if (!mysqli_data_seek($qry, $i)) {
+                return false; // Linha não encontrada
+            }            
+            // Obter a linha como array associativo
+            $row = mysqli_fetch_assoc($qry);
+            
+            if ($row) {
+                /* Tabela Produtos */
+                $this->id_prod         = $row["id_prod"];
+                $this->id_categprod    = $row["id_categprod"];
+                $this->id_setorprod    = $row["id_setorprod"];
+                $this->nome_prod       = $row["nome_prod"];
+                $this->slug_prod       = $row["slug_prod"];
+                $this->descricao_prod  = $row["descricao_prod"];
+                $this->id_medidaprod   = $row["id_medidaprod"];
+                $this->preco_prod      = $row["preco_prod"];
+                $this->promocao_prod   = $row["promocao_prod"];
+                $this->imagemp_prod    = $row["imagemp_prod"];
+                $this->imagemg_prod    = $row["imagemg_prod"];
+                $this->ativo_prod      = $row["ativo_prod"];
+                /*Tabela Carrinho-*/
+                $this->id_carro        = $row["id_carro"];
+                $this->id_pedidocarro  = $row["id_pedidocarro"];
+                $this->id_prodcarro    = $row["id_prodcarro"];
+                $this->quantidade_carro= $row["quantidade_carro"];
+                $this->valor_carro     = $row["valor_carro"];
+                return true;
+            }            
+                return false;
+        }
     }
 ?>

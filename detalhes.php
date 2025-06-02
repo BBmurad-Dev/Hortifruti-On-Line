@@ -92,9 +92,12 @@
                             <figcaption><?php echo $prod['nome_prod'];?></figcaption>
                         </figure>
                         <span> R$ <?php echo $prod['preco_prod'];?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($prod['id_medidaprod']);?>)</span>
-                        <form action="">
-                            <input type="submit" value="">
-                        </form>
+                            <form action="admin/op/op_carrinho.php" method="post">
+                                <input type="hidden" name="txt_idProd" value="<?= $produto->getIdProduto();?>">
+                                <input type="hidden" name="txt_qtde" value="1">
+                                <input type="hidden" name="txt_valorProd" value="<?= $produto->getPrecoProd(); ?>">
+                                <input type="submit" value="">
+                            </form>
                     </a>
                 </li> 
                 <?php } ?>           

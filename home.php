@@ -66,7 +66,10 @@
                                 <figcaption><?php echo $produto->getNomeProd();?></figcaption>
                             </figure>
                             <span> R$ <?php echo $produto->getPrecoProd();?> <span class="abrevMedida"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
-                            <form action="">
+                            <form action="admin/op/op_carrinho.php" method="post">
+                                <input type="hidden" name="txt_idProd" value="<?= $produto->getIdProduto();?>">
+                                <input type="hidden" name="txt_qtde" value="1">
+                                <input type="hidden" name="txt_valorProd" value="<?= $produto->getPrecoProd(); ?>">
                                 <input type="submit" value="">
                             </form>
                         </a>
@@ -86,7 +89,10 @@
                                 <figcaption><?php echo $produto->getNomeProd();?></figcaption>
                             </figure>
                             <span> R$ <?php echo $produto->getPrecoProd();?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
-                            <form action="">
+                            <form action="admin/op/op_carrinho.php" method="post">
+                                <input type="hidden" name="txt_idProd" value="<?= $produto->getIdProduto();?>">
+                                <input type="hidden" name="txt_qtde" value="1">
+                                <input type="hidden" name="txt_valorProd" value="<?= $produto->getPrecoProd(); ?>">
                                 <input type="submit" value="">
                             </form>
                         </a>
@@ -106,7 +112,10 @@
                                 <figcaption><?php echo $produto->getNomeProd();?></figcaption>
                             </figure>
                             <span> R$ <?php echo $produto->getPrecoProd();?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
-                            <form action="">
+                            <form action="admin/op/op_carrinho.php" method="post">
+                                <input type="hidden" name="txt_idProd" value="<?= $produto->getIdProduto();?>">
+                                <input type="hidden" name="txt_qtde" value="1">
+                                <input type="hidden" name="txt_valorProd" value="<?= $produto->getPrecoProd(); ?>">
                                 <input type="submit" value="">
                             </form>
                         </a>

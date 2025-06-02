@@ -40,12 +40,12 @@
         }
 
         public function excluir() {
-            $this->sql  = "DELETE FROM $this->tabela WHERE $this->campoTabela = '$this->valorPesquisa'";
+            $this->sql  = "DELETE FROM $this->tabela WHERE $this->campoTabela = $this->valorPesquisa";
             self::executarSQL($this->sql);
         }
 
         public function alterar() {
-            $this->sql  = "UPDATE $this->tabela SET $this->campos WHERE $this->campoTabela = '$this->valorPesquisa'";
+            $this->sql  = "UPDATE $this->tabela SET $this->campos WHERE $this->campoTabela = $this->valorPesquisa";
             self::executarSQL($this->sql);
         }
 

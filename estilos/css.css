@@ -566,7 +566,9 @@ section.vitrine input {
 }
 
 section.vitrine input:hover {
+    transition-duration: 0.6s;
     cursor: pointer;
+    background-image: url(../imagens/botao_comprar_red.png);
 }
 
 table {
@@ -647,6 +649,6 @@ strong.nome-produto {
 section.vitrine > ul > li.carrinho-vitrine {
     width: 155px;
     height: 220px;
-    margin-left: 5px;
+    margin-left: 5px;           
 }
 
