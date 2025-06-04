@@ -638,12 +638,16 @@ img.img-carrinho {
 }
 
 strong.nome-produto {
-    width: 80%;
+    width: 70%;
     height: 60px;
     margin-left: 10px;
     float: left;
     display: flex;
     align-items: center;
+}
+
+input.qtdeCarro {
+    text-align: center;
 }
 
 section.vitrine > ul > li.carrinho-vitrine {

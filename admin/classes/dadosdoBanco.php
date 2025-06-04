@@ -451,22 +451,22 @@
         private $id_prod, $id_categprod, $id_setorprod, $nome_prod, $slug_prod, $descricao_prod, $id_medidaprod, $preco_prod, $promocao_prod, $imagemp_prod, $imagemg_prod, $ativo_prod;
 
         public function getIdCarro() {
-            $this-> id_carro;
+            return $this-> id_carro;
         }
         public function getIdPedidoCarro() {
-            $this-> id_pedidocarro;
+            return $this-> id_pedidocarro;
         }
         public function getIdProdCarro () {
-            $this-> id_prodcarro;
+            return $this-> id_prodcarro;
         }
         public function getQtdeCarro () {
-            $this-> quantidade_carro;
+            return $this-> quantidade_carro;
         }        
         public function getValorCarro () {
-            $this-> valor_carro;
+            return $this-> valor_carro;
         }        
         public function setIdProduto($id_prod) {
-            $this-> id_prod = $id_prod;
+            return $this-> id_prod = $id_prod;
         }
         public function getIdProduto() {
             return $this-> id_prod;

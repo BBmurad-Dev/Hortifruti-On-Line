@@ -55,7 +55,7 @@
                 <h1><a href="#"><?= $produto->getNomeProd();?></a></h1>
             </div>
             <div id="preco-prod">
-                <spain>Preço/</spain><span class="abrevMedida2">(<?= $medida->verLinkMedida($idMedidaProd);?>):</span><strong> R$ <?= $produto->getPrecoProd();?></strong>          
+                <spain>Preço/</spain><span class="abrevMedida2">(<?= $medida->verLinkMedida($idMedidaProd);?>):</span><strong> R$ <?php echo number_format($produto->getPrecoProd(), 2, ',', '.');?></strong>          
             </div>
             <div class="set-grp">
                 <h3>Setor: </h3><h3 class="set-grp2"> <?= $setor->verLinkSetor($idSetorProd); ?> </h3>
@@ -91,7 +91,7 @@
                             <img src="admin/imagens/produtos/<?php echo $prod['imagemp_prod'];?>" alt="<?php echo $prod['slug_prod'];?>">
                             <figcaption><?php echo $prod['nome_prod'];?></figcaption>
                         </figure>
-                        <span> R$ <?php echo $prod['preco_prod'];?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($prod['id_medidaprod']);?>)</span>
+                        <span> R$ <?php echo number_format($prod['preco_prod'], 2, ',', '.');?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($prod['id_medidaprod']);?>)</span>
                             <form action="admin/op/op_carrinho.php" method="post">
                                 <input type="hidden" name="txt_idProd" value="<?= $produto->getIdProduto();?>">
                                 <input type="hidden" name="txt_qtde" value="1">

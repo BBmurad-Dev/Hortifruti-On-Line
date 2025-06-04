@@ -65,7 +65,7 @@
                                 <img src="admin/imagens/produtos/<?php echo $produto->getImagemPProd();?>" alt="<?php echo $produto->getSlugProd();?>">
                                 <figcaption><?php echo $produto->getNomeProd();?></figcaption>
                             </figure>
-                            <span> R$ <?php echo $produto->getPrecoProd();?> <span class="abrevMedida"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
+                            <span> R$ <?php echo number_format($produto->getPrecoProd(), 2, ',', '.');?> <span class="abrevMedida"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
                             <form action="admin/op/op_carrinho.php" method="post">
                                 <input type="hidden" name="txt_idProd" value="<?= $produto->getIdProduto();?>">
                                 <input type="hidden" name="txt_qtde" value="1">
@@ -88,7 +88,7 @@
                                 <img src="admin/imagens/produtos/<?php echo $produto->getImagemPProd();?>" alt="<?php echo $produto->getSlugProd();?>">
                                 <figcaption><?php echo $produto->getNomeProd();?></figcaption>
                             </figure>
-                            <span> R$ <?php echo $produto->getPrecoProd();?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
+                            <span> R$ <?php echo number_format($produto->getPrecoProd(), 2, ',', '.');?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
                             <form action="admin/op/op_carrinho.php" method="post">
                                 <input type="hidden" name="txt_idProd" value="<?= $produto->getIdProduto();?>">
                                 <input type="hidden" name="txt_qtde" value="1">
@@ -111,7 +111,7 @@
                                 <img src="admin/imagens/produtos/<?php echo $produto->getImagemPProd();?>" alt="<?php echo $produto->getSlugProd();?>">
                                 <figcaption><?php echo $produto->getNomeProd();?></figcaption>
                             </figure>
-                            <span> R$ <?php echo $produto->getPrecoProd();?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
+                            <span> R$ <?php echo number_format($produto->getPrecoProd(), 2, ',', '.');?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($idMedidaProd);?>)</span>
                             <form action="admin/op/op_carrinho.php" method="post">
                                 <input type="hidden" name="txt_idProd" value="<?= $produto->getIdProduto();?>">
                                 <input type="hidden" name="txt_qtde" value="1">

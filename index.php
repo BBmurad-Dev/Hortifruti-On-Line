@@ -4,6 +4,7 @@
     $categoria  = new DadosCategoria();
     $medida     = new DadosMedida();
     $produto    = new DadosProduto();
+    $carrinho   = new DadosCarrinho();
 
     session_start();
 

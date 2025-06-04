@@ -1,7 +1,6 @@
-<?php 
-    $carrinho = new DadosCarrinho();
+<?php
+    include_once('admin/classes/dadosdoBanco.php');
     $id_pedidoCarro  = $_SESSION['idPedidoHorti'];
-
 ?> 
 
 <div id="base-carrinho">
@@ -29,6 +28,7 @@
                         
                         for ($iCarro = 0; $iCarro < $totalReg; $iCarro++) {
                             $carrinho->verCarrinho($sql, $iCarro);
+                            $idMedidaCarro = $carrinho->getIdMedidaProd();
                     ?>
                         <tr>
                             <td>
@@ -36,11 +36,12 @@
                                 <strong class="nome-produto"><?= $carrinho->getNomeProd();?></strong>
                             </td>
                             <td> 
-                                <input type="number" id="txt_qtde" name="txt_qtde" value=<?= $carrinho->getQtdeCarro();?> size="3" maxlength="3" min="1" max="20" step="1" /> 
+                                <input type="number" id="txt_qtde" name="txt_qtde" class="qtdeCarro" value=<?= $carrinho->getQtdeCarro();?> size="3" maxlength="3" min="1" max="20" step="1" /> 
                             </td>
-                            <td><?= $carrinho->getPrecoProd()?></td>
-                            <td><?= $carrinho->getPrecoProd()?></td>
-                            <td>R$ 3,89 </a></td>
+                            <td><?= $medida->verLinkMedida($idMedidaCarro);?></td>
+                            <td>R$ <?= number_format($carrinho->getPrecoProd(), 2, ',', '.'); ?></td>
+                            
+                            <td>R$ <?= number_format($carrinho->getPrecoProd() * $carrinho->getQtdeCarro(), 2, ',', '.'); ?> </a></td>
                             <td>
                                 <input type="submit" name="alterar" value="Atualizar">
                             </td>
@@ -52,7 +53,6 @@
                     <tr>
                         <td colspan="7"> Valor Total dos Produtos: R$ </td>                        
                     </tr>
-                    <?php echo "Id carro: " . $carrinho->getIdCarro() . "Id Pedido: " . $id_pedidoCarro . "Id Produto: " . $carrinho->getIdProdCarro() . "quantidade : " . $carrinho->getQtdeCarro() . "valor carrinho: " . $carrinho->getValorCarro(); ?> 
                 </tbody>
             </table>
         </form>
@@ -79,7 +79,7 @@
                             <img src="admin/imagens/produtos/<?php echo $prod['imagemp_prod'];?>" alt="<?php echo $prod['slug_prod'];?>">
                             <figcaption><?php echo $prod['nome_prod'];?></figcaption>
                         </figure>
-                        <span> R$ <?php echo $prod['preco_prod'];?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($prod['id_medidaprod']);?>)</span>
+                        <span> R$ <?= number_format($prod['preco_prod'], 2, ',', '.');?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($prod['id_medidaprod']);?>)</span>
                         <form action="">
                             <input type="submit" value="">
                         </form>

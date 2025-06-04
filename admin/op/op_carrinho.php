@@ -11,8 +11,6 @@
     $qtdeCarro      = $_POST['txt_qtde'];
     $valorProdCarro = $_POST['txt_valorProd'];
 
-    echo "Id produto: " . $id_prodCarro . " - Quantidade: " . $qtdeCarro . " - Valor do Produto: " . $valorProdCarro;
-
     if (@$_SESSION["idPedidoHorti"] == "" || @$_SESSION["idPedidoHorti"] == 0 ) {
         
         $dataAtual = date("Y-m-d");
