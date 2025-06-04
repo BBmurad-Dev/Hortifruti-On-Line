@@ -39,14 +39,18 @@
                                 <input type="number" id="txt_qtde" name="txt_qtde" value=<?= $carrinho->getQtdeCarro();?> size="3" maxlength="3" min="1" max="20" step="1" /> 
                             </td>
                             <td><?= $carrinho->getPrecoProd()?></td>
+                            <td><?= $carrinho->getPrecoProd()?></td>
                             <td>R$ 3,89 </a></td>
                             <td>
                                 <input type="submit" name="alterar" value="Atualizar">
                             </td>
+                            <td>
+                                <input type="submit" name="excluir" value="Excluir">
+                            </td>
                         </tr>                        
                     <?php } ?> 
                     <tr>
-                        <td colspan="5"> Valor Total dos Produtos: R$ </td>                        
+                        <td colspan="7"> Valor Total dos Produtos: R$ </td>                        
                     </tr>
                     <?php echo "Id carro: " . $carrinho->getIdCarro() . "Id Pedido: " . $id_pedidoCarro . "Id Produto: " . $carrinho->getIdProdCarro() . "quantidade : " . $carrinho->getQtdeCarro() . "valor carrinho: " . $carrinho->getValorCarro(); ?> 
                 </tbody>
