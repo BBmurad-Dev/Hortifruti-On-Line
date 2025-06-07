@@ -77,19 +77,32 @@
 
     }
 
+    
+
     if ($acaoCarrinho2 == 'EXCLUIR') {
+        // Recebe o array com todos os itens
         $v_atualiza = $_POST['txt_qtde'];
-        $chave = array_keys($v_atualiza);
-        $cont = sizeof($chave);
-
-        $id_prodCarro = $v_atualiza['IDPRODUTO'];
-
-            $cadastro->setCampoTabela('id_pedidocarro');
-            $cadastro->setValorPesquisa("'$id_pedidoCarro' AND id_prodcarro = '$id_prodCarro'");
-
-            $cadastro->excluir();
-            
+        
+        // Encontra o item que teve o botão de excluir clicado
+        foreach ($v_atualiza as $indice => $item) {
+            if (isset($_POST['excluir_'.$indice])) { // Verifica se o botão de excluir desta linha foi clicado
+                $id_prodCarro = $item['IDPRODUTO'];
+                
+                // Verifica se o produto existe no carrinho
+                $sql = "SELECT * FROM carrinho WHERE id_prodcarro = '$id_prodCarro' AND id_pedidocarro = '$id_pedidoCarro'";
+                $totalReg = $carrinho->totalRegistrosCarro($sql);
+                
+                if ($totalReg > 0) {
+                    $cadastro->setCampoTabela("id_pedidocarro");
+                    $cadastro->setValorPesquisa("'$id_pedidoCarro' AND id_prodcarro = '$id_prodCarro'");
+                    $cadastro->excluir();
+                    
+                    // Sai do loop após encontrar e excluir o item
+                    break;
+                }
+            }
         }
+    }
     
    
 ?>

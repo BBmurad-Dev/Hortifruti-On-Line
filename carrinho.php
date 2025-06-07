@@ -53,7 +53,7 @@
                             <td>
                                 <input type="hidden" name="acao2" value="EXCLUIR">
                                 <input type="hidden" name="txt_qtde[<?= $iCarro ?>][IDPRODUTO]" value="<?= $carrinho->getIdProduto(); ?>">
-                                <input type="submit" name="excluir" value="Excluir">
+                                <input type="submit" name="excluir_<?= $iCarro ?>" value="Excluir">
                             </td>
                         </tr>                        
                     <?php } ?> 

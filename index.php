@@ -30,6 +30,7 @@
                         $pag[1] = "home.php";
                         $pag[2] = "detalhes.php";
                         $pag[3] = "carrinho.php";
+                        $pag[4] = "frm_clientes.php";
                        
 
                         if (!empty($link)) {
