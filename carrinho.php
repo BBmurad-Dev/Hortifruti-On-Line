@@ -1,13 +1,13 @@
 <?php
     include_once('admin/classes/dadosdoBanco.php');
-    $id_pedidoCarro  = $_SESSION['idPedidoHorti'];
+    @$id_pedidoCarro  = $_SESSION['idPedidoHorti'];
 ?> 
 
 <div id="base-carrinho">
     <h2><img src="imagens/barra-carrinho1.png" alt="Carrinho Pagina Inicial"></h2>
     <h3><img src="imagens/meu-carrinho.png" alt="Carrinho Pagina Inicial"></h3>
     <div class="dados-carrinho">
-        <form name="frm-carrinho" action="admin/op/op_carrinho.php">
+        <form name="frm-carrinho" action="admin/op/op_carrinho.php" method="POST">
             <table cellpadding="0" cellspacing="0" border="1">
                 <thead>
                     <tr>
@@ -29,6 +29,9 @@
                         for ($iCarro = 0; $iCarro < $totalReg; $iCarro++) {
                             $carrinho->verCarrinho($sql, $iCarro);
                             $idMedidaCarro = $carrinho->getIdMedidaProd();
+                            $subTotal      = $carrinho->getPrecoProd() * $carrinho->getQtdeCarro();
+                            $valorTotal    += $subTotal; 
+                            $txt_qtde[$iCarro] = $carrinho->getIdProduto();
                     ?>
                         <tr>
                             <td>
@@ -36,29 +39,33 @@
                                 <strong class="nome-produto"><?= $carrinho->getNomeProd();?></strong>
                             </td>
                             <td> 
-                                <input type="number" id="txt_qtde" name="txt_qtde" class="qtdeCarro" value=<?= $carrinho->getQtdeCarro();?> size="3" maxlength="3" min="1" max="20" step="1" /> 
+                                <input type="number" id="txt_qtde" name="txt_qtde[<?= $iCarro ?>][QTDE]" class="qtdeCarro" value=<?= $carrinho->getQtdeCarro();?> size="3" maxlength="3" min="1" max="20" step="1" /> 
                             </td>
                             <td><?= $medida->verLinkMedida($idMedidaCarro);?></td>
                             <td>R$ <?= number_format($carrinho->getPrecoProd(), 2, ',', '.'); ?></td>
                             
                             <td>R$ <?= number_format($carrinho->getPrecoProd() * $carrinho->getQtdeCarro(), 2, ',', '.'); ?> </a></td>
                             <td>
+                                <input type="hidden" name="acao" value="ALTERAR">
+                                <input type="hidden" name="txt_qtde[<?= $iCarro ?>][IDPRODUTO]" value="<?= $carrinho->getIdProduto(); ?>">
                                 <input type="submit" name="alterar" value="Atualizar">
                             </td>
                             <td>
+                                <input type="hidden" name="acao2" value="EXCLUIR">
+                                <input type="hidden" name="txt_qtde[<?= $iCarro ?>][IDPRODUTO]" value="<?= $carrinho->getIdProduto(); ?>">
                                 <input type="submit" name="excluir" value="Excluir">
                             </td>
                         </tr>                        
                     <?php } ?> 
                     <tr>
-                        <td colspan="7"> Valor Total dos Produtos: R$ </td>                        
+                        <td colspan="7"> Valor Total dos Produtos: <strong>R$ <?= number_format($valorTotal, 2, ',', '.'); ?></strong></td>                        
                     </tr>
                 </tbody>
             </table>
         </form>
     </div>
     <div id="linha-botoes">
-        <img src="imagens/continuar-comprando.png" alt="">
+        <a href="index.php?link=1"><img src="imagens/continuar-comprando.png" alt=""></a>
         <img src="imagens/finalizar-compra.png" alt="">
     </div>
     <section class="vitrine">

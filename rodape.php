@@ -4,7 +4,7 @@
     <div id="cabecalho-inferior" class="cor2">
         <nav id="menu-principal">
             <ul>
-                <li class="linha-vertical"> <a href="#">Home</a> </li>
+                <li class="linha-vertical"> <a href="index.php?link=1">Home</a> </li>
                 <li class="linha-vertical"> <a href="#">Produtos</a></li>
                 <li class="linha-vertical"> <a href="#">Fale Conosco</a> </li>
                 <li> <a href="#">Quem Somos</a> </li>
