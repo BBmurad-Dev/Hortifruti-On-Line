@@ -5,6 +5,7 @@
     $medida     = new DadosMedida();
     $produto    = new DadosProduto();
     $carrinho   = new DadosCarrinho();
+    $cliente    = new DadosCliente();
 
     session_start();
 

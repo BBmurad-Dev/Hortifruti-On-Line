@@ -581,4 +581,111 @@
                 return false;
         }
     }
+
+    class DadosCliente extends conexaoMySQL {
+        private $id_cliente , $nome_cliente, $nascimento_cliente, $celular_cliente, $endereco_cliente, $bairro_cliente, $cidade_cliente, $uf_cliente, $cep_cliente, $email_cliente, $senha_cliente, $ativo_cliente;
+        
+        public function setIdCliente($id_cliente) {
+            $this-> id_cliente = $id_cliente;
+        }
+        public function getIdCliente() {
+            return $this-> id_cliente;
+        }
+        public function getNomeCliente() {
+            return $this-> nome_cliente;
+        }
+        public function getNascCliente() {
+            return $this-> nascimento_cliente;
+        }
+        public function getCelularCliente() {
+            return $this-> celular_cliente;
+        }
+        public function getEnderecoCliente() {
+            return $this-> endereco_cliente;
+        }
+        public function getBairroCliente() {
+            return $this-> bairro_cliente;
+        }
+        public function getCidadeCliente() {
+            return $this-> cidade_cliente;
+        }
+        public function getUFCliente() {
+            return $this-> uf_cliente;
+        }
+        public function getCepCliente() {
+            return $this-> cep_cliente;
+        }
+        public function getEmailCliente() {
+            return $this-> email_cliente;
+        }
+        public function getSenhaCliente() {
+            return $this-> senha_cliente;
+        }
+        public function getAtivoCliente() {
+            return $this-> ativo_cliente;
+        }
+
+        public function mostrarDadosClientes() {
+            $sql   = "SELECT * FROM cliente WHERE id_cliente = '$this->id_cliente'";
+            $qry   = self::executarSQL($sql);
+            $linha = self::listar($qry);
+
+            @$this->id_cliente         = $linha["id_cliente"];
+            @$this->nome_cliente       = $linha["nome_cliente"];
+            @$this->nascimento_cliente = $linha["nascimento_cliente"];
+            @$this->celular_cliente    = $linha["celular_cliente"];
+            @$this->endereco_cliente   = $linha["endereco_cliente"];
+            @$this->bairro_cliente     = $linha["bairro_cliente"];
+            @$this->cidade_cliente     = $linha["cidade_cliente"];
+            @$this->uf_cliente         = $linha["uf_cliente"];
+            @$this->cep_cliente        = $linha["cep_cliente"];
+            @$this->email_cliente      = $linha["email_cliente"];
+            @$this->senha_cliente      = $linha["senha_cliente"];
+            @$this->ativo_cliente      = $linha["ativo_cliente"];            
+        }
+
+        public function pegarProximoId() {
+        $sql = "SELECT AUTO_INCREMENT 
+                FROM information_schema.TABLES 
+                WHERE TABLE_SCHEMA = DATABASE() 
+                AND TABLE_NAME = 'cliente'";
+        $qry = self::executarSQL($sql);
+        $linha = self::listar($qry);
+        return $linha["AUTO_INCREMENT"]; // Retorna o próximo ID que será usado
+        }
+
+        public function totalRegistrosClientes($sql){
+            $qry   = self::executarSQL($sql);
+            $total = self::contaDados($qry);
+            return $total; 
+        }
+
+        public function verClientes($sql, $i) {
+            $qry = self::executarSQL($sql);
+           
+            // Mover o ponteiro para a linha desejada
+            if (!mysqli_data_seek($qry, $i)) {
+                return false; // Linha não encontrada
+            }            
+            // Obter a linha como array associativo
+            $row = mysqli_fetch_assoc($qry);
+            
+            if ($row) {
+                $this->id_cliente         = $row["id_cliente"];
+                $this->nome_cliente       = $row["nome_cliente"];
+                $this->nascimento_cliente = $row["nascimento_cliente"];
+                $this->celular_cliente    = $row["celular_cliente"];
+                $this->endereco_cliente   = $row["endereco_cliente"];
+                $this->bairro_cliente     = $row["bairro_cliente"];
+                $this->cidade_cliente     = $row["cidade_cliente"];
+                $this->uf_cliente         = $row["uf_cliente"];
+                $this->cep_cliente        = $row["cep_cliente"];
+                $this->email_cliente      = $row["email_cliente"];
+                $this->senha_cliente      = $row["senha_cliente"];
+                $this->ativo_cliente      = $row["ativo_cliente"];
+                return true;
+            }            
+                return false;
+        }
+    }
 ?>

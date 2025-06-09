@@ -17,8 +17,8 @@
         
         $dataAtual = date("Y-m-d");
 
-        if (@$_SESSION['cliente_horti']['ID'] != "") {
-            $idClienteHorti = $_SESSION['cliente_horti']['ID'];
+        if (@$_SESSION['cliente_horti']['IDCLIENTE'] != "") {
+            $idClienteHorti = $_SESSION['cliente_horti']['IDCLIENTE'];
         } else {
             $idClienteHorti = "0";
         }
