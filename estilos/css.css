@@ -495,6 +495,20 @@ div.tresLinhas > label > select {
     outline: none;
 }
 
+div.treslinhas1 > label {
+    display: inline-table;
+    width: 150px;
+}
+
+div.treslinhas1 > label > input {
+    padding: 6px 5px;
+    margin-left: 15px;
+    background: #fff;
+    border: 1px solid #069;
+    width: 218px;
+    outline: none;
+}
+
 div#formulario .botao {
     width: 120px;
     height: 30px;
@@ -504,6 +518,90 @@ div#formulario .botao {
     color: #fff;
     background: #069;
 }
+
+/******************************/
+/*     LOGAR PARA COMPRAR     */
+/******************************/
+
+div#base-carrinho h4 {
+    width: 1200px;
+    height: 30px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+div#container-logar {
+    width: 1198px;
+    height: 280px;
+    border: 1px solid #ccc;
+}
+
+div#carrinho-logar {
+    width: 597px;
+    height: 280px;
+    float: left;
+    border: 1px solid #ccc;
+}
+
+div#carrinho-logar > h5 {
+    margin: 120px 0 0 240px;
+}
+
+div#carrinho-logar > p {
+    font-size: 11px;
+}
+
+div#carrinho-logar  a {
+    color: #333;
+    text-decoration: none;
+}
+
+div#carrinho-logar  a:hover {
+    text-decoration: underline;
+}
+
+div#formulario-login > form {
+    width: 330px;
+    margin: 20px auto;
+    background: #fff;
+}
+
+div#formulario-login fieldset {
+    border: 0;
+    padding: 0 15px 10px 15px;
+}
+
+div#formulario-login label {
+    display: block;
+    padding: 3px 0;
+}
+
+div#formulario-login span {
+    display: block;
+    font: 16px;
+    color: #333;
+}
+
+div#formulario-login input {
+    padding: 3px;
+    width: 280px;
+    border: 1px solid #ccc;
+}
+
+div#formulario-login input.botao {
+    width: 120px;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+    color: #fff;
+    margin: 5px auto;
+}
+
+
+
+
 
 /******************************/
 /* INICIO DAS CLASSES DO SITE */

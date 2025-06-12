@@ -11,6 +11,7 @@
     $txt_nomeCliente    = $cliente->getNomeCliente();
     $txt_nascCliente    = $cliente->getNascCliente();
     $txt_celularCliente = $cliente->getCelularCliente();
+    $txt_cepCliente     = $cliente->getCepCliente();
     $txt_enderecoCliente= $cliente->getEnderecoCliente();
     $txt_bairroCliente  = $cliente->getBairroCliente();
     $txt_cidadeCliente  = $cliente->getCidadeCliente();
@@ -45,14 +46,18 @@
                 <span class="titulo">Nome</span>
                 <input type="text" name="txt_nome" id="txt_nome" value="<?= $txt_nomeCliente; ?>" class="unicaLinha">
             </label>
-            <div class="duasLinhas">
+            <div class="treslinhas1">
                 <label>
                     <span class="titulo">Data de Nascimento</span>
                     <input type="text" name="txt_nascimento" id="txt_nascimento" value="<?= $txt_nascCliente; ?>">
-                    </label>
-                    <label>
+                </label>
+                <label>
                     <span class="titulo">Celular (Whatsapp)</span>
                     <input type="text" name="txt_celular" id="txt_celular" value="<?= $txt_celularCliente; ?>">
+                </label>
+                <label>
+                    <span class="titulo">CEP</span>
+                    <input type="text" name="txt_cep" id="txt_cep" value="<?= $txt_cepCliente; ?>">
                 </label>
             </div>
             <label>

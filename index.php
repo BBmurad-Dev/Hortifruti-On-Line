@@ -32,6 +32,7 @@
                         $pag[2] = "detalhes.php";
                         $pag[3] = "carrinho.php";
                         $pag[4] = "frm_clientes.php";
+                        $pag[5] = "logarParaComprar.php";
                        
 
                         if (!empty($link)) {
