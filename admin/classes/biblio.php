@@ -10,7 +10,7 @@
         $dia_sem = date ("w");
         
         // $data_final = $dia_da_semana[$dia_sem] . ", $dia de " . $mes_extenso[$mes] . " de $ano";
-           $data_final = "$dia de " . $mes_extensao[$mes] . " de $ano";
+           $data_final = "$dia de " . $mes_extenso[$mes] . " de $ano";
 
         return $data_final; 
     }
@@ -31,11 +31,32 @@
         return $databr;
     }
 
-    function anti_sql_injection ($str){ 
-        if (!is_numeric($str)) {
-            $str = get_magic_quotes_gpc() ? stripslashes($str) : $str;
-            $str = function_exists('mysqli_real_escape_string') ? mysqli_real_escape_string($str) : mysqli_escape_string($str);
+    function anti_sql_injection($str) {
+        // Se for nulo, retorna string vazia
+        if ($str === null) {
+            return '';
         }
+        
+        // Se for array, processa cada elemento recursivamente
+        if (is_array($str)) {
+            return array_map('anti_sql_injection', $str);
+        }
+        
+        // Não escapar números
+        if (is_numeric($str)) {
+            return $str;
+        }
+        
+        // Remove espaços extras
+        $str = trim($str);
+        
+        // Substitui caracteres perigosos
+        $str = str_replace(
+            ["\\", "\x00", "\n", "\r", "'", '"', "\x1a", "%", "_"],
+            ["\\\\", "\\x00", "\\n", "\\r", "\'", '\"', "\\x1a", "\%", "\_"],
+            $str
+        );
+        
         return $str;
     }
 

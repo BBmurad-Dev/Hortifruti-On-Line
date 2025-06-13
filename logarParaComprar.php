@@ -20,13 +20,13 @@
                     </fieldset>
                 </form>
             </div>
-            <p><a href="$"> >Esqueci minha Senha</a></p>
-            <p><a href="$"> >Alterar Senha</a></p>
+            <p class="link"><a href="$"> >Esqueci minha Senha</a></p>
+            <p class="link"><a href="$"> >Alterar Senha</a></p>
 
         </div>
         <div id="carrinho-logar">
-            <h2>Ainda não sou Cadastrado</h2>
-            <p>Caso ainda não seja cadastrado no site, clique no botão abaixo e faça seu cadastro para poder finalizar a compra</p>
+            <h2>Ainda não sou Clinte</h2>
+            <p class="link2">Caso ainda não seja cadastrado no site, clique no botão abaixo e faça seu cadastro para poder finalizar a compra</p>
             <h5><a href="#"> <img src="imagens/criar-novo.png" alt=""> </a></h5>
         </div>
     </div>

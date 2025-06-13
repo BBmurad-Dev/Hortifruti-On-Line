@@ -1,5 +1,19 @@
+<?php
+    @$mostrarCliente     = $_SESSION['cliente_horti']['NOME'];
+    if ($mostrarCliente == "" || $mostrarCliente == null) {
+        $mostrarCliente = "Visitante";
+        $txtLog         = "Logar";
+        $txtLink        = "5";
+    } else {
+        $txtLog         = "Logoff";
+        $txtLink        = "9";
+    }
+
+?>
+
 <div id="cabecalho-superior">
     <nav id="menu-superior">
+        <span class="bemvindo"><?php echo "Olá $mostrarCliente, seja bem vindo à nossa loja !"; ?></span>
         <ul>
             <li> <a href="#">Minha Conta</a></li>
             <li> <a href="index.php?link=3">Meu Carrinho</a></li>
