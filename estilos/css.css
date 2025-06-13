@@ -383,7 +383,7 @@ div#comprar-prod > form > input {
 
 div#base-carrinho, #base-carrinho h2 {
     width: 1200px;
-    margin: 0 0 10px 0;
+    margin: 0 auto 10px auto;
 }
 
 div#linha-botoes {
@@ -551,7 +551,7 @@ div#carrinho-logar {
 }
 
 div#base-carrinho h2 {
-    margin: 15px 0 15px 30px;
+    margin: 15px 0 15px 0px;
 }
 
 div#carrinho-logar > h5 {

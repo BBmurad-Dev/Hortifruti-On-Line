@@ -69,30 +69,30 @@
         <img src="imagens/finalizar-compra.png" alt="">
     </div>
     <section class="vitrine">
-            <h3 class="cor1 sugestao"> Sugestões de Compras </h3>
-            <ul>
-                <?php
-                $sugestoes = $produto->verSugestoesCarrinho();
-                
-                // Limita a exibição a 5 produtos ou ao total disponível
-                $totalExibir = min(7, count($sugestoes));
-                
-                for ($i = 0; $i < $totalExibir; $i++) {
-                    $prod = $sugestoes[$i];
-                ?>
-                <li class="carrinho-vitrine">
-                    <a href="index.php?link=2&idProd=<?= $prod['id_prod']; ?>"> 
-                        <figure>
-                            <img src="admin/imagens/produtos/<?php echo $prod['imagemp_prod'];?>" alt="<?php echo $prod['slug_prod'];?>">
-                            <figcaption><?php echo $prod['nome_prod'];?></figcaption>
-                        </figure>
-                        <span> R$ <?= number_format($prod['preco_prod'], 2, ',', '.');?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($prod['id_medidaprod']);?>)</span>
-                        <form action="">
-                            <input type="submit" value="">
-                        </form>
-                    </a>
-                </li> 
-                <?php } ?>           
-            </ul>
-        </section>
+        <h3 class="cor1 sugestao"> Sugestões de Compras </h3>
+        <ul>
+            <?php
+            $sugestoes = $produto->verSugestoesCarrinho();
+            
+            // Limita a exibição a 5 produtos ou ao total disponível
+            $totalExibir = min(7, count($sugestoes));
+            
+            for ($i = 0; $i < $totalExibir; $i++) {
+                $prod = $sugestoes[$i];
+            ?>
+            <li class="carrinho-vitrine">
+                <a href="index.php?link=2&idProd=<?= $prod['id_prod']; ?>"> 
+                    <figure>
+                        <img src="admin/imagens/produtos/<?php echo $prod['imagemp_prod'];?>" alt="<?php echo $prod['slug_prod'];?>">
+                        <figcaption><?php echo $prod['nome_prod'];?></figcaption>
+                    </figure>
+                    <span> R$ <?= number_format($prod['preco_prod'], 2, ',', '.');?> </span> <span class="abrevMedida"> (<?= $medida->verLinkMedida($prod['id_medidaprod']);?>)</span>
+                    <form action="">
+                        <input type="submit" value="">
+                    </form>
+                </a>
+            </li> 
+            <?php } ?>           
+        </ul>
+    </section>
 </div>
