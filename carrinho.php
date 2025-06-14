@@ -66,7 +66,7 @@
     </div>
     <div id="linha-botoes">
         <a href="index.php?link=1"><img src="imagens/continuar-comprando.png" alt=""></a>
-        <img src="imagens/finalizar-compra.png" alt="">
+        <a href="finalizaPedido.php"><img src="imagens/finalizar-compra.png" alt=""></a>
     </div>
     <section class="vitrine">
         <h3 class="cor1 sugestao"> Sugestões de Compras </h3>

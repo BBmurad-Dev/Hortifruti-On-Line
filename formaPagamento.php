@@ -52,7 +52,48 @@
             </tbody>
         </table>
     </div>
-    <div id="linha-botoes">
-        <a href="index.php?link=1"><img src="imagens/continuar-comprando.png" alt=""></a>
-        <img src="imagens/finalizar-compra.png" alt="">
+    <h4 class="cor1">Opção 1 - Depósito / Transferência / Pix</h4>
+    <div id="container-pagar">
+        <div id="container-bancos-geral">
+            <div id="container-bancos">
+                <img src="imagens/bb.png" alt="Imagem Banco do Brasil">
+                <p> Banco do Brasil    <br />
+                    Agência: 1341-1 <br />
+                    C/C: 12345-6    <br />
+                    Four-System Technology <br />         
+                </p>
+                <img src="imagens/qr_code.jpg" alt="QR Code da Conta Bancaria">
+            </div>    
+            <div id="container-bancos">
+                <img src="imagens/bradesco.png" alt="Imagem Banco Bradesco">
+                <p> Banco Bradesco  <br />
+                    Agência: 1341-1 <br />
+                    C/C: 12345-6    <br />
+                    Four-System Technology <br />
+                </p>
+                <img src="imagens/qr_code.jpg" alt="QR Code da Conta Bancaria">
+            </div>                    
+            <div id="container-bancos">
+                <img src="imagens/itau.png" alt="Imagem Banco Itaú">
+                <p> Banco Itaú     <br />
+                    Agência: 1341-1 <br />
+                    C/C: 12345-6    <br />
+                    Four-System Technology <br />
+                </p>
+                <img src="imagens/qr_code.jpg" alt="QR Code da Conta Bancaria">
+            </div>
+            <div id="container-bancos">
+                <img src="imagens/caixa.png" alt="Imagem Banco Caixa Econômica Federal">
+                <p> Caixa Econômica Federal      <br />
+                    Agência: 1341-1 <br />
+                    C/C: 12345-6    <br />
+                    Four-System Technology <br />
+                </p>
+                <img src="imagens/qr_code.jpg" alt="QR Code da Conta Bancaria">
+            </div>
+        </div>
     </div>
+    <div id="linha-botoes">
+        <a href="#"><img class="finalizar"   src="imagens/finalizar-pedido.gif" alt="Botão Finalizar Pedido"></a>
+    </div>
+</div>
