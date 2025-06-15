@@ -94,6 +94,6 @@
         </div>
     </div>
     <div id="linha-botoes">
-        <a href="#"><img class="finalizar"   src="imagens/finalizar-pedido.gif" alt="Botão Finalizar Pedido"></a>
+        <a href="index.php?link=8"><img class="finalizar"   src="imagens/finalizar-pedido.gif" alt="Botão Finalizar Pedido"></a>
     </div>
 </div>

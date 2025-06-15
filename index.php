@@ -34,7 +34,8 @@
                         $pag[4] = "frm_clientes.php";
                         $pag[5] = "logarParaComprar.php";
                         $pag[6] = "formaPagamento.php";
-                        $pag[7] = "finalizaPedido.php";                       
+                        $pag[7] = "finalizaPedido.php";
+                        $pag[8] = "finalizaTransDepPix.php";                       
 
                         if (!empty($link)) {
                             if (file_exists($pag[$link])) {
